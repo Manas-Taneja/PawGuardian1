@@ -7,7 +7,7 @@ const pillars = [
     icon: Layers,
     title: "Smart Subscription",
     desc: "Personalised plans with regular diagnostics, baseline tracking, and AI-assisted health insights.",
-    color: "text-blue-600 bg-blue-50"
+    color: "text-[#1e3470] bg-[#1e3470]/10"
   },
   {
     icon: Truck,
@@ -19,7 +19,7 @@ const pillars = [
     icon: Smartphone,
     title: "Digital Health Platform",
     desc: "All records, reminders, reports, and vet guidance—accessible in one place.",
-    color: "text-blue-600 bg-blue-50"
+    color: "text-[#1e3470] bg-[#1e3470]/10"
   },
   {
     icon: PiggyBank,
@@ -31,10 +31,10 @@ const pillars = [
 
 export const HowItWorks: React.FC = () => {
   return (
-    <section id="how-it-works" className="py-24 bg-white/80 border-t border-gray-100 backdrop-blur-sm">
+    <section id="how-it-works" className="py-24 border-t" style={{ backgroundColor: '#f8f4e8', borderColor: 'rgba(30,52,112,0.10)' }}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
-          <span className="text-blue-600 font-semibold tracking-wide uppercase text-sm">The 4-Pillar Model</span>
+          <span className="font-semibold tracking-wide uppercase text-sm" style={{ color: '#1e3470' }}>The 4-Pillar Model</span>
           <h2 className="mt-2 text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
             A Complete Preventive Care Ecosystem
           </h2>
@@ -49,12 +49,13 @@ export const HowItWorks: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-blue-100/50 transition-all group"
+              className="relative bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden"
+              style={{ '--tw-shadow-color': 'rgba(30,52,112,0.08)' } as React.CSSProperties}
             >
               <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${pillar.color} group-hover:scale-110 transition-transform`}>
                 <pillar.icon size={28} strokeWidth={1.5} />
               </div>
-              <div className="mb-4 text-3xl font-black text-gray-100 absolute top-4 right-6 pointer-events-none select-none group-hover:text-gray-50 transition-colors">
+              <div className="text-7xl font-black text-gray-100 absolute -top-2 -right-1 pointer-events-none select-none group-hover:text-gray-50 transition-colors leading-none">
                 {index + 1}
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{pillar.title}</h3>

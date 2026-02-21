@@ -1,73 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PawGuardian</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PawGuardian — India's First At-Home Preventive Pet Care</title>
+  <meta name="description"
+    content="PawGuardian is India's first subscription-based, at-home preventive pet care ecosystem. Managed healthcare for your pet at every stage of their life." />
+  <meta property="og:title" content="PawGuardian — Preventive Pet Care, Delivered Home" />
+  <meta property="og:description"
+    content="Stop waiting for symptoms. PawGuardian brings vet-grade diagnostics, vaccinations, and expert guidance to your door." />
+  <meta property="og:type" content="website" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Fraunces', 'serif'],
+          },
+          colors: {
+            brand: {
+              cream: '#f8f4e8',   // Primary background
+              navy: '#1e3470',    // Primary action / accent
+              dark: '#282239',    // Headers / dark surfaces
+              50: '#f8f4e8',
+              100: '#eee8d4',
+              500: '#1e3470',
+              600: '#19296a',     // Hover state for navy
+              900: '#282239',
             },
-            colors: {
-              brand: {
-                50: '#f0f9ff',
-                100: '#e0f2fe',
-                500: '#0ea5e9', // Sky blue like the reference
-                600: '#0284c7',
-                900: '#0c4a6e',
-              },
-              accent: {
-                orange: '#fbbf24', // For Dog section contrast
-                blue: '#3b82f6',   // For Cat section contrast
-              }
-            },
-            animation: {
-              'blob': 'blob 7s infinite',
-              'shimmer': 'shimmer 2s linear infinite',
-            },
-            keyframes: {
-              blob: {
-                '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                '100%': { transform: 'translate(0px, 0px) scale(1)' },
-              },
-              shimmer: {
-                '0%': { backgroundPosition: '0 0' },
-                '100%': { backgroundPosition: '-200% 0' },
-              }
+            accent: {
+              orange: '#fbbf24',  // Dog section
+              teal: '#0d9488',    // Cat section (replaces generic blue)
             }
           },
+          animation: {
+            'blob': 'blob 7s infinite',
+            'shimmer': 'shimmer 2s linear infinite',
+          },
+          keyframes: {
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '0 0' },
+              '100%': { backgroundPosition: '-200% 0' },
+            }
+          }
         },
-      }
-    </script>
-    <style>
-      /* Custom Scrollbar for Vercel feel */
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #888;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #555;
-      }
-      body {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-    </style>
+      },
+    }
+  </script>
+  <style>
+    /* ── Brand Tokens ───────────────────────────── */
+    :root {
+      --pg-cream: #f8f4e8;
+      --pg-navy: #1e3470;
+      --pg-dark: #282239;
+      --pg-navy-hover: #19296a;
+      --font-display: 'Fraunces', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* ── Typography ─────────────────────────────── */
+    body {
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Fraunces on all headings — one rule, whole site */
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--font-display);
+      font-optical-sizing: auto;
+    }
+
+    /* ── Scrollbar ──────────────────────────────── */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--pg-cream);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--pg-navy);
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--pg-dark);
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -80,8 +118,10 @@
 }
 </script>
 </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>
