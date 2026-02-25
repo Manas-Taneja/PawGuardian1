@@ -33,19 +33,21 @@ interface FieldProps {
   name: string;
   type: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
   required?: boolean;
   placeholder?: string;
   min?: string;
   step?: string;
+  inputRef?: React.RefObject<HTMLInputElement>;
 }
 
-const Field: React.FC<FieldProps> = ({ label, name, type, value, onChange, required, placeholder, min, step }) => (
+const Field: React.FC<FieldProps> = ({ label, name, type, value, onChange, required, placeholder, min, step, inputRef }) => (
   <div>
-    <label className="block text-sm font-semibold mb-1.5" style={{ color: '#282239' }}>
+    <label htmlFor={name} className="block text-sm font-semibold mb-1.5" style={{ color: '#282239' }}>
       {label} {required && <span className="text-red-500">*</span>}
     </label>
     <input
+      id={name}
       name={name}
       type={type}
       value={value}
@@ -54,7 +56,8 @@ const Field: React.FC<FieldProps> = ({ label, name, type, value, onChange, requi
       placeholder={placeholder}
       min={min}
       step={step}
-      className="w-full px-4 py-2.5 rounded-xl border text-sm focus:outline-none focus:ring-2 bg-white"
+      ref={inputRef}
+      className="w-full px-4 py-2.5 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3470] bg-white"
       style={{ borderColor: '#a8b4d8', color: '#282239' }}
     />
   </div>
@@ -97,6 +100,16 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
     }
   }, [isOpen]);
 
+  const firstInputRef = React.useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      // Small timeout lets AnimatePresence render before focusing
+      const t = setTimeout(() => firstInputRef.current?.focus(), 50);
+      return () => clearTimeout(t);
+    }
+  }, [isOpen]);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
@@ -126,10 +139,13 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
             className="relative w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden"
             style={{ backgroundColor: '#f8f4e8' }}
             onClick={e => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="booking-modal-title"
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-[#1e3470]/10">
-              <h2 className="text-xl font-bold" style={{ color: '#282239' }}>Book a Slot</h2>
+              <h2 id="booking-modal-title" className="text-xl font-bold" style={{ color: '#282239' }}>Book a Slot</h2>
               <button
                 onClick={onClose}
                 className="p-1.5 rounded-full hover:bg-[#1e3470]/10 transition-colors"
@@ -145,19 +161,20 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                 <SuccessView onClose={onClose} />
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <Field label="Your Name" name="name" type="text" value={form.name} onChange={handleChange} required placeholder="e.g. Priya Sharma" />
+                  <Field label="Your Name" name="name" type="text" value={form.name} onChange={handleChange} required placeholder="e.g. Priya Sharma" inputRef={firstInputRef} />
                   <Field label="City" name="city" type="text" value={form.city} onChange={handleChange} required placeholder="e.g. Mumbai" />
 
                   <div>
-                    <label className="block text-sm font-semibold mb-1.5" style={{ color: '#282239' }}>
+                    <label htmlFor="petType" className="block text-sm font-semibold mb-1.5" style={{ color: '#282239' }}>
                       Type of Pet <span className="text-red-500">*</span>
                     </label>
                     <select
+                      id="petType"
                       name="petType"
                       value={form.petType}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2.5 rounded-xl border text-sm focus:outline-none focus:ring-2 bg-white"
+                      className="w-full px-4 py-2.5 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3470] bg-white"
                       style={{ borderColor: '#a8b4d8', color: '#282239' }}
                     >
                       <option>Dog</option>
@@ -171,15 +188,16 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                   <Field label="Age (years)" name="petAge" type="number" value={form.petAge} onChange={handleChange} required placeholder="e.g. 2" min="0" step="0.5" />
 
                   <div>
-                    <label className="block text-sm font-semibold mb-1.5" style={{ color: '#282239' }}>
+                    <label htmlFor="petGender" className="block text-sm font-semibold mb-1.5" style={{ color: '#282239' }}>
                       Gender <span className="text-red-500">*</span>
                     </label>
                     <select
+                      id="petGender"
                       name="petGender"
                       value={form.petGender}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-2.5 rounded-xl border text-sm focus:outline-none focus:ring-2 bg-white"
+                      className="w-full px-4 py-2.5 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-[#1e3470] bg-white"
                       style={{ borderColor: '#a8b4d8', color: '#282239' }}
                     >
                       <option>Male</option>
