@@ -159,7 +159,7 @@ const faqs = [
     },
     {
         q: 'What cities are you currently operating in?',
-        a: 'We currently serve Bengaluru, Mumbai, Delhi NCR, Hyderabad, Pune, and Chennai. We are expanding to 10 more cities by Q3 2025.',
+        a: 'launching in goa soon',
     },
     {
         q: 'Can I book an urgent same-day consultation?',
