@@ -45,14 +45,19 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, navigate }) => {
           {/* Left: Logo */}
           <button
             onClick={() => navigate('home')}
-            className="flex items-center gap-2.5 cursor-pointer group w-fit bg-transparent border-none p-0"
+            className="flex items-center gap-2.5 cursor-pointer w-fit bg-transparent border-none p-0"
           >
-            <div
-              className="text-white p-2 rounded-xl transition-transform group-hover:rotate-12 shadow-lg"
-              style={{ backgroundColor: '#1e3470', boxShadow: '0 6px 16px rgba(30,52,112,0.28)' }}
+            <motion.div
+              whileHover={{ rotate: [0, -15, 15, -10, 10, 0] }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+              className="text-white p-2 rounded-xl shadow-lg"
+              style={{
+                background: 'linear-gradient(135deg, #FF6B9D, #FF9F7F)',
+                boxShadow: '0 6px 16px rgba(255,107,157,0.35)',
+              }}
             >
               <PawPrint size={24} />
-            </div>
+            </motion.div>
             <span className="text-2xl font-bold tracking-tight" style={{ color: '#282239' }}>
               PawGuardian
             </span>
@@ -66,21 +71,23 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, navigate }) => {
                 <button
                   key={label}
                   onClick={() => page && navigate(page)}
-                  className={`text-sm font-medium transition-colors whitespace-nowrap bg-transparent border-none cursor-pointer p-0 ${!page ? 'cursor-default opacity-50' : ''
-                    }`}
+                  className={`relative text-sm font-medium transition-colors whitespace-nowrap bg-transparent border-none cursor-pointer p-0 pb-1 ${!page ? 'cursor-default opacity-50' : ''}`}
                   style={{
                     color: isActive ? '#1e3470' : '#4a4a6a',
                     fontWeight: isActive ? 700 : 500,
                   }}
                   onMouseEnter={(e) => {
-                    if (page) (e.target as HTMLButtonElement).style.color = '#1e3470';
+                    if (page) (e.currentTarget as HTMLButtonElement).style.color = '#1e3470';
                   }}
                   onMouseLeave={(e) => {
                     if (page)
-                      (e.target as HTMLButtonElement).style.color = isActive ? '#1e3470' : '#4a4a6a';
+                      (e.currentTarget as HTMLButtonElement).style.color = isActive ? '#1e3470' : '#4a4a6a';
                   }}
                 >
                   {label}
+                  {isActive && (
+                    <span className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#FFE66D' }} />
+                  )}
                 </button>
               );
             })}
@@ -107,17 +114,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, navigate }) => {
             <Button
               size="sm"
               className="hidden md:flex text-white border-none rounded-full px-5"
-              style={
-                {
-                  backgroundColor: '#1e3470',
-                  boxShadow: '0 4px 14px rgba(30,52,112,0.30)',
-                } as React.CSSProperties
-              }
+              style={{
+                backgroundColor: '#FF6B9D',
+                boxShadow: '0 4px 14px rgba(255,107,157,0.35)',
+              } as React.CSSProperties}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#19296a';
+                (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#e85a8a';
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#1e3470';
+                (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#FF6B9D';
               }}
               onClick={() => setIsBookingOpen(true)}
             >
