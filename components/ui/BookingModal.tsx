@@ -247,7 +247,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                       style={{ backgroundColor: '#1e3470', boxShadow: '0 4px 14px rgba(30,52,112,0.30)' }}
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? 'Submitting…' : 'Submit'}
+                      {isSubmitting ? 'Joining…' : 'Join Waitlist'}
                     </Button>
                   </div>
                 </form>
