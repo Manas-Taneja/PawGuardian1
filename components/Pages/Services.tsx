@@ -239,19 +239,6 @@ const ServiceCard: React.FC<{ service: (typeof services)[0]; index: number }> = 
                 </ul>
             </div>
 
-            {/* Bottom CTA */}
-            <div className="px-8 pb-8">
-                <button
-                    className="flex items-center gap-1.5 text-sm font-semibold transition-all group/btn"
-                    style={{ color: service.accent }}
-                >
-                    <span>Book this service</span>
-                    <ArrowRight
-                        size={14}
-                        className="group-hover/btn:translate-x-1 transition-transform"
-                    />
-                </button>
-            </div>
         </motion.div>
     );
 };
