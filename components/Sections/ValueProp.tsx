@@ -6,9 +6,9 @@ import { Card } from '../ui/Card';
 const MaskedSymptomsCard = () => {
     return (
         <div className="mt-6 space-y-4">
-            <div className="bg-[#2563EB] p-6 rounded-2xl text-white shadow-lg">
+            <div className="bg-[#003F7D] p-6 rounded-2xl text-white shadow-lg">
                 <div className="flex items-start gap-4 mb-4">
-                    <div className="bg-white/10 p-2 rounded-xl text-[#FF9F7F] shrink-0">
+                    <div className="bg-white/10 p-2 rounded-xl text-[#FF8E00] shrink-0">
                         <AlertCircle size={24} />
                     </div>
                     <h4 className="text-xl font-bold">More than 6 out of 10 pets instinctively hide their symptoms.</h4>
@@ -19,12 +19,12 @@ const MaskedSymptomsCard = () => {
                 <div className="bg-[#182a5c] p-4 rounded-xl border border-white/5 flex items-center justify-between">
                     <div>
                         <span className="block text-xs font-bold text-[#a8b4d8] uppercase tracking-wider mb-1">Early Detection</span>
-                        <span className="text-[#4ECDC4] font-bold text-lg">Costs &lt; ⅓</span>
+                        <span className="text-[#003366] font-bold text-lg">Costs &lt; ⅓</span>
                     </div>
                     <div className="h-8 w-px bg-white/10 mx-4"></div>
                     <div className="text-right">
                         <span className="block text-xs font-bold text-[#a8b4d8] uppercase tracking-wider mb-1">Late Treatment</span>
-                        <span className="text-[#F97316] font-bold text-lg">3x More Expensive</span>
+                        <span className="text-[#FD7702] font-bold text-lg">3x More Expensive</span>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@ export const ValueProp: React.FC = () => {
                         className="text-xl text-gray-500 max-w-2xl mx-auto"
                     >
                         Most pet parents don't delay care because they don't care. <br />
-                        <span style={{ color: '#2563EB' }} className="font-semibold">They delay because the system makes it hard.</span>
+                        <span style={{ color: '#003F7D' }} className="font-semibold">They delay because the system makes it hard.</span>
                     </motion.p>
                 </div>
 
@@ -80,19 +80,19 @@ export const ValueProp: React.FC = () => {
 
                     {/* Right Column: The Solution */}
                     <div className="space-y-8">
-                        <div className="border-l-4 pl-6" style={{ borderColor: '#2563EB' }}>
+                        <div className="border-l-4 pl-6" style={{ borderColor: '#003F7D' }}>
                             <h3 className="text-2xl font-bold text-gray-900 mb-2">From Reactive to Proactive</h3>
                             <p className="text-gray-600">PawGuardian flips the model. We move from reactive clinic visits to proactive, at-home, continuous care.</p>
                         </div>
 
                         <div className="grid gap-5">
-                            <Card className="hover:border-[#F97316]/40 transition-all duration-300 group">
+                            <Card className="hover:border-[#FD7702]/40 transition-all duration-300 group">
                                 <div className="flex items-start gap-4">
                                     <div
                                         className="p-3 rounded-xl transition-colors"
-                                        style={{ backgroundColor: '#DBEAFE', color: '#2563EB' }}
-                                        onMouseEnter={(e) => { const d = e.currentTarget; d.style.backgroundColor = '#2563EB'; d.style.color = 'white'; }}
-                                        onMouseLeave={(e) => { const d = e.currentTarget; d.style.backgroundColor = '#DBEAFE'; d.style.color = '#2563EB'; }}
+                                        style={{ backgroundColor: '#DBEAFE', color: '#003F7D' }}
+                                        onMouseEnter={(e) => { const d = e.currentTarget; d.style.backgroundColor = '#003F7D'; d.style.color = 'white'; }}
+                                        onMouseLeave={(e) => { const d = e.currentTarget; d.style.backgroundColor = '#DBEAFE'; d.style.color = '#003F7D'; }}
                                     >
                                         <AlertCircle size={24} />
                                     </div>
@@ -105,13 +105,13 @@ export const ValueProp: React.FC = () => {
                                 </div>
                             </Card>
 
-                            <Card className="hover:border-[#3B82F6]/40 transition-all duration-300 group">
+                            <Card className="hover:border-[#003366]/40 transition-all duration-300 group">
                                 <div className="flex items-start gap-4">
                                     <div
                                         className="p-3 rounded-xl transition-colors"
-                                        style={{ backgroundColor: 'rgba(78,205,196,0.12)', color: '#3B82F6' }}
-                                        onMouseEnter={(e) => { const d = e.currentTarget; d.style.backgroundColor = '#3B82F6'; d.style.color = 'white'; }}
-                                        onMouseLeave={(e) => { const d = e.currentTarget; d.style.backgroundColor = 'rgba(78,205,196,0.12)'; d.style.color = '#3B82F6'; }}
+                                        style={{ backgroundColor: 'rgba(78,205,196,0.12)', color: '#003366' }}
+                                        onMouseEnter={(e) => { const d = e.currentTarget; d.style.backgroundColor = '#003366'; d.style.color = 'white'; }}
+                                        onMouseLeave={(e) => { const d = e.currentTarget; d.style.backgroundColor = 'rgba(78,205,196,0.12)'; d.style.color = '#003366'; }}
                                     >
                                         <Home size={24} />
                                     </div>
@@ -124,12 +124,12 @@ export const ValueProp: React.FC = () => {
                                 </div>
                             </Card>
 
-                            <Card className="hover:border-[#EA580C]/60 transition-all duration-300 group">
+                            <Card className="hover:border-[#FF5003]/60 transition-all duration-300 group">
                                 <div className="flex items-start gap-4">
                                     <div
                                         className="p-3 rounded-xl transition-colors"
                                         style={{ backgroundColor: 'rgba(255,230,109,0.18)', color: '#d4a500' }}
-                                        onMouseEnter={(e) => { const d = e.currentTarget; d.style.backgroundColor = '#EA580C'; d.style.color = '#7a5c00'; }}
+                                        onMouseEnter={(e) => { const d = e.currentTarget; d.style.backgroundColor = '#FF5003'; d.style.color = '#7a5c00'; }}
                                         onMouseLeave={(e) => { const d = e.currentTarget; d.style.backgroundColor = 'rgba(255,230,109,0.18)'; d.style.color = '#d4a500'; }}
                                     >
                                         <Wallet size={24} />

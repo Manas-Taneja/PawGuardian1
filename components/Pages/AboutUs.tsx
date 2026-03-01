@@ -71,11 +71,11 @@ export const AboutUs: React.FC<AboutUsProps> = ({ navigate, onOpenBooking }) => 
         <main className="min-h-screen" style={{ backgroundColor: '#f8f4e8' }}>
 
             {/* ── Hero ─────────────────────────────────────────────────────── */}
-            <section className="relative overflow-hidden py-32 px-6" style={{ backgroundColor: '#282239' }}>
+            <section className="relative overflow-hidden py-32 px-6" style={{ backgroundColor: '#002347' }}>
                 {/* Decorative blobs */}
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                    <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full blur-[120px]" style={{ backgroundColor: 'rgba(30,52,112,0.28)' }} />
-                    <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full blur-[120px]" style={{ backgroundColor: 'rgba(40,34,57,0.40)' }} />
+                    <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full blur-[120px]" style={{ backgroundColor: 'rgba(0,35,71,0.28)' }} />
+                    <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full blur-[120px]" style={{ backgroundColor: 'rgba(0,35,71,0.40)' }} />
                 </div>
 
                 <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
@@ -143,12 +143,12 @@ export const AboutUs: React.FC<AboutUsProps> = ({ navigate, onOpenBooking }) => 
                         viewport={{ once: true }}
                         transition={{ duration: 0.7 }}
                     >
-                        <span className="font-semibold tracking-wide uppercase text-sm" style={{ color: '#2563EB' }}>
+                        <span className="font-semibold tracking-wide uppercase text-sm" style={{ color: '#003F7D' }}>
                             Our Story
                         </span>
                         <h2 className="mt-3 text-3xl md:text-5xl font-bold tracking-tight text-gray-900 leading-tight">
                             Two passionate pet lovers{' '}
-                            <span style={{ color: '#2563EB' }}>on a mission.</span>
+                            <span style={{ color: '#003F7D' }}>on a mission.</span>
                         </h2>
                         <p className="mt-6 text-gray-600 text-lg leading-relaxed">
                             We are Atharvaa Khanzode and Aditya Bendi, two third-year students from BITS Pilani. Our journey with PawGuardian began not in a boardroom, but from a profound, shared passion for pets and a harsh reality we couldn't ignore.
@@ -161,10 +161,10 @@ export const AboutUs: React.FC<AboutUsProps> = ({ navigate, onOpenBooking }) => 
             </section>
 
             {/* ── Values ───────────────────────────────────────────────────── */}
-            <section className="py-24 px-6 border-t" style={{ backgroundColor: '#f8f4e8', borderColor: 'rgba(30,52,112,0.08)' }}>
+            <section className="py-24 px-6 border-t" style={{ backgroundColor: '#f8f4e8', borderColor: 'rgba(0,35,71,0.08)' }}>
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <span className="font-semibold tracking-wide uppercase text-sm" style={{ color: '#2563EB' }}>
+                        <span className="font-semibold tracking-wide uppercase text-sm" style={{ color: '#003F7D' }}>
                             What Drives Us
                         </span>
                         <h2 className="mt-2 text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
@@ -182,7 +182,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ navigate, onOpenBooking }) => 
                                 viewport={{ once: true }}
                                 whileHover={{ y: -6 }}
                                 className="bg-white rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-xl transition-all group"
-                                style={{ '--tw-shadow-color': 'rgba(30,52,112,0.08)' } as React.CSSProperties}
+                                style={{ '--tw-shadow-color': 'rgba(0,35,71,0.08)' } as React.CSSProperties}
                             >
                                 <div
                                     className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 ${v.color} group-hover:scale-110 transition-transform`}
@@ -200,7 +200,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ navigate, onOpenBooking }) => 
 
 
             {/* ── CTA ──────────────────────────────────────────────────────── */}
-            <section className="py-24 px-6" style={{ background: 'linear-gradient(135deg, #282239 0%, #2563EB 50%, #282239 100%)' }}>
+            <section className="py-24 px-6" style={{ background: 'linear-gradient(135deg, #002347 0%, #003F7D 50%, #002347 100%)' }}>
                 <div className="max-w-2xl mx-auto text-center">
                     <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 border" style={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.20)' }}>
                         <Stethoscope size={14} className="text-blue-300" />
@@ -222,7 +222,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ navigate, onOpenBooking }) => 
                         <Button
                             size="lg"
                             className="text-white border-none shadow-lg rounded-full px-8 flex items-center gap-2 group"
-                            style={{ backgroundColor: '#6272E8', boxShadow: '0 8px 24px rgba(98,114,232,0.40)' }}
+                            style={{ backgroundColor: '#FF8E00', boxShadow: '0 8px 24px rgba(255,142,0,0.40)' }}
                             onClick={onOpenBooking}
                         >
                             <Users size={18} />

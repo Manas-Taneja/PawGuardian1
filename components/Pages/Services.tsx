@@ -28,9 +28,9 @@ const services = [
         tagline: 'Core & Lifestyle Shots',
         description:
             'Age-appropriate vaccination schedules for dogs and cats — from Puppyhood Rabies & DHPP to annual boosters — administered by licensed vets at your doorstep.',
-        highlight: 'from-[#2563EB] to-[#2a4a98]',
-        accent: '#2563EB',
-        accentLight: 'rgba(30,52,112,0.08)',
+        highlight: 'from-[#003F7D] to-[#2a4a98]',
+        accent: '#003F7D',
+        accentLight: 'rgba(0,35,71,0.08)',
         features: [
             'DHPP, Leptospirosis, Rabies for dogs',
             'FVRCP, FeLV, Rabies for cats',
@@ -45,8 +45,8 @@ const services = [
         tagline: 'Lab Tests at Home',
         description:
             'Our trained phlebotomists collect samples at your home. Full blood panels, organ function, infection markers — results delivered digitally within 24 hours.',
-        highlight: 'from-[#3B82F6] to-[#60A5FA]',
-        accent: '#3B82F6',
+        highlight: 'from-[#003366] to-[#003366]',
+        accent: '#003366',
         accentLight: 'rgba(59,130,246,0.08)',
         features: [
             'CBC + comprehensive metabolic panel',
@@ -96,8 +96,8 @@ const services = [
         tagline: 'Skin, Coat & Comfort',
         description:
             'More than a bath — our vet-supervised grooming targets skin conditions, ear infections, and coat quality. Species-appropriate products, zero stress in familiar surroundings.',
-        highlight: 'from-[#EA580C] to-[#F97316]',
-        accent: '#EA580C',
+        highlight: 'from-[#FF5003] to-[#FD7702]',
+        accent: '#FF5003',
         accentLight: 'rgba(234,88,12,0.08)',
         features: [
             'Anti-fungal & medicated baths',
@@ -253,7 +253,7 @@ const FaqItem: React.FC<{ q: string; a: string; index: number }> = ({ q, a, inde
             custom={index}
             viewport={{ once: true }}
             className="border-b last:border-none"
-            style={{ borderColor: 'rgba(30,52,112,0.10)' }}
+            style={{ borderColor: 'rgba(0,35,71,0.10)' }}
         >
             <button
                 onClick={() => setOpen(!open)}
@@ -299,13 +299,13 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
             {/* ── Hero ──────────────────────────────────────────────────────── */}
             <section
                 className="relative overflow-hidden py-32 px-6"
-                style={{ backgroundColor: '#282239' }}
+                style={{ backgroundColor: '#002347' }}
             >
                 {/* Decorative blobs */}
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
                     <div
                         className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full blur-[130px]"
-                        style={{ backgroundColor: 'rgba(30,52,112,0.30)' }}
+                        style={{ backgroundColor: 'rgba(0,35,71,0.30)' }}
                     />
                     <div
                         className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full blur-[100px]"
@@ -313,7 +313,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                     />
                     <div
                         className="absolute -bottom-20 right-1/4 w-[300px] h-[300px] rounded-full blur-[100px]"
-                        style={{ backgroundColor: 'rgba(30,52,112,0.20)' }}
+                        style={{ backgroundColor: 'rgba(0,35,71,0.20)' }}
                     />
                 </div>
 
@@ -377,8 +377,8 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                             size="lg"
                             className="text-white border-none shadow-lg rounded-full px-8 flex items-center gap-2 group"
                             style={{
-                                backgroundColor: '#6272E8',
-                                boxShadow: '0 8px 24px rgba(98,114,232,0.45)',
+                                backgroundColor: '#FF8E00',
+                                boxShadow: '0 8px 24px rgba(255,142,0,0.45)',
                             }}
                             onClick={onOpenBooking}
                         >
@@ -414,21 +414,21 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                             href={`#${s.id}`}
                             className="shrink-0 text-sm font-semibold px-5 py-2 rounded-full border transition-all"
                             style={{
-                                borderColor: 'rgba(30,52,112,0.20)',
+                                borderColor: 'rgba(0,35,71,0.20)',
                                 color: '#4a4a6a',
                             }}
                             onMouseEnter={(e) => {
                                 (e.currentTarget as HTMLAnchorElement).style.backgroundColor =
-                                    '#2563EB';
+                                    '#003F7D';
                                 (e.currentTarget as HTMLAnchorElement).style.color = '#fff';
                                 (e.currentTarget as HTMLAnchorElement).style.borderColor =
-                                    '#2563EB';
+                                    '#003F7D';
                             }}
                             onMouseLeave={(e) => {
                                 (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '';
                                 (e.currentTarget as HTMLAnchorElement).style.color = '#4a4a6a';
                                 (e.currentTarget as HTMLAnchorElement).style.borderColor =
-                                    'rgba(30,52,112,0.20)';
+                                    'rgba(0,35,71,0.20)';
                             }}
                         >
                             {s.label}
@@ -443,13 +443,13 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                     <div className="text-center mb-16">
                         <span
                             className="font-semibold tracking-wide uppercase text-sm"
-                            style={{ color: '#2563EB' }}
+                            style={{ color: '#003F7D' }}
                         >
                             Our Services
                         </span>
                         <h2 className="mt-2 text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
                             Everything Under One{' '}
-                            <span style={{ color: '#2563EB' }}>Paw</span>
+                            <span style={{ color: '#003F7D' }}>Paw</span>
                         </h2>
                         <p className="mt-4 text-gray-500 max-w-xl mx-auto leading-relaxed">
                             Each service is designed around one principle: zero-compromise care
@@ -470,7 +470,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
             {/* ── Trust Banner ──────────────────────────────────────────────── */}
             <section
                 className="py-6 px-6 text-white text-sm font-medium"
-                style={{ backgroundColor: '#2563EB' }}
+                style={{ backgroundColor: '#003F7D' }}
             >
                 <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-x-10 gap-y-2 text-center">
                     {[
@@ -490,7 +490,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
             {/* ── How It Works ──────────────────────────────────────────────── */}
             <section
                 className="py-24 px-6"
-                style={{ backgroundColor: '#282239' }}
+                style={{ backgroundColor: '#002347' }}
             >
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
@@ -535,7 +535,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                                     {/* Circle */}
                                     <div
                                         className="w-20 h-20 rounded-2xl mx-auto mb-6 flex items-center justify-center relative z-10"
-                                        style={{ backgroundColor: 'rgba(30,52,112,0.40)', border: '1px solid rgba(168,180,216,0.20)' }}
+                                        style={{ backgroundColor: 'rgba(0,35,71,0.40)', border: '1px solid rgba(168,180,216,0.20)' }}
                                     >
                                         <Icon size={28} style={{ color: '#a8b8e8' }} strokeWidth={1.5} />
                                     </div>
@@ -564,7 +564,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                     <div className="text-center mb-14">
                         <span
                             className="font-semibold tracking-wide uppercase text-sm"
-                            style={{ color: '#2563EB' }}
+                            style={{ color: '#003F7D' }}
                         >
                             Common Questions
                         </span>
@@ -586,7 +586,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                 className="py-24 px-6"
                 style={{
                     background:
-                        'linear-gradient(135deg, #282239 0%, #2563EB 50%, #282239 100%)',
+                        'linear-gradient(135deg, #002347 0%, #003F7D 50%, #002347 100%)',
                 }}
             >
                 <div className="max-w-2xl mx-auto text-center">
@@ -625,8 +625,8 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                             size="lg"
                             className="text-white border-none shadow-lg rounded-full px-8 flex items-center gap-2 group"
                             style={{
-                                backgroundColor: '#6272E8',
-                                boxShadow: '0 8px 24px rgba(98,114,232,0.40)',
+                                backgroundColor: '#FF8E00',
+                                boxShadow: '0 8px 24px rgba(255,142,0,0.40)',
                             }}
                             onClick={onOpenBooking}
                         >

@@ -60,7 +60,7 @@ export const Plans: React.FC<PlansProps> = ({ navigate }) => {
                         >
                             <h2 className="text-6xl md:text-8xl font-black tracking-tighter absolute top-10 left-10 select-none" style={{ color: 'rgba(255,159,127,0.5)' }}>DOG</h2>
                             <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative z-10">
-                                For <span style={{ color: '#FF9F7F' }}>Dogs</span>
+                                For <span style={{ color: '#FF8E00' }}>Dogs</span>
                             </h3>
                             <p className="text-lg text-gray-600 mb-8 max-w-md">Comprehensive care plans tailored for canine physiology and lifestyle needs.</p>
 
@@ -70,7 +70,7 @@ export const Plans: React.FC<PlansProps> = ({ navigate }) => {
                                         key={i}
                                         className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-sm transition-shadow"
                                         style={{ border: '1px solid rgba(255,159,127,0.25)' }}
-                                        onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = '#FF9F7F'; }}
+                                        onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = '#FF8E00'; }}
                                         onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,159,127,0.25)'; }}
                                     >
                                         <div className="flex justify-between items-center mb-2">
@@ -83,7 +83,7 @@ export const Plans: React.FC<PlansProps> = ({ navigate }) => {
                             </div>
 
                             <div className="mt-8">
-                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#6272E8', boxShadow: '0 4px 14px rgba(98,114,232,0.35)' }} onClick={() => navigate('services')}>View Dog Plans</Button>
+                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#FF8E00', boxShadow: '0 4px 14px rgba(255,142,0,0.35)' }} onClick={() => navigate('services')}>View Dog Plans</Button>
                             </div>
                         </motion.div>
                     </div>
@@ -126,7 +126,7 @@ export const Plans: React.FC<PlansProps> = ({ navigate }) => {
                             </div>
 
                             <div className="mt-8">
-                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#6272E8', boxShadow: '0 4px 14px rgba(98,114,232,0.35)' }} onClick={() => navigate('services')}>View Cat Plans</Button>
+                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#FF8E00', boxShadow: '0 4px 14px rgba(255,142,0,0.35)' }} onClick={() => navigate('services')}>View Cat Plans</Button>
                             </div>
                         </motion.div>
                     </div>
