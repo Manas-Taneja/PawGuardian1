@@ -58,7 +58,7 @@ function App() {
 
         {currentPage === 'home' ? (
           <main>
-            <Hero />
+            <Hero onOpenBooking={openBooking} />
             <ValueProp />
             <HowItWorks />
             <Plans />

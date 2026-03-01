@@ -3,7 +3,11 @@ import { Button } from '../ui/Button';
 import { motion } from 'framer-motion';
 import { ArrowRight, PawPrint, Stethoscope, UserRound, Wallet } from 'lucide-react';
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onOpenBooking: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
   return (
     <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -77,6 +81,7 @@ export const Hero: React.FC = () => {
           {/* Join Waitlist Button */}
           <Button
             size="lg"
+            onClick={onOpenBooking}
             className="text-white border-none px-8 rounded-full flex items-center gap-2 group"
             style={{ background: 'linear-gradient(135deg, #FF6B9D, #FF9F7F)', boxShadow: '0 8px 24px rgba(255,107,157,0.40)' }}
           >
@@ -93,7 +98,7 @@ export const Hero: React.FC = () => {
             <Button
               size="lg"
               variant="secondary"
-              className="bg-white/10 text-white hover:bg-white/20 border-transparent hover:border-white/30 backdrop-blur-sm rounded-full px-8"
+              className="bg-white/10 text-white hover:bg-white/20 border-transparent hover:border-white/30 rounded-full px-8"
             >
               Stay Updated
             </Button>
