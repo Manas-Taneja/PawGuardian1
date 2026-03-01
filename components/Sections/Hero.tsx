@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '../ui/Button';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
@@ -14,8 +14,18 @@ export const Hero: React.FC = () => {
           className="w-full h-full object-cover"
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-[2px]" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent" />
+        {/* Decorative paw print — bottom left */}
+        <div className="absolute bottom-8 left-8 opacity-10 pointer-events-none select-none z-0">
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="60" cy="75" rx="18" ry="22" />
+            <circle cx="38" cy="50" r="10" />
+            <circle cx="60" cy="42" r="10" />
+            <circle cx="82" cy="50" r="10" />
+            <circle cx="30" cy="68" r="8" />
+          </svg>
+        </div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
@@ -26,8 +36,12 @@ export const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="flex items-center justify-center gap-2 mb-8"
         >
-          <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#a8b8e8' }}></span>
-          <span className="text-xs font-bold tracking-[0.2em] uppercase" style={{ color: '#c8d4f0' }}>Accepting Early Access</span>
+          <span
+            className="flex items-center gap-1.5 text-xs font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full"
+            style={{ backgroundColor: 'rgba(255,107,157,0.25)', color: '#ffc8dd', border: '1px solid rgba(255,107,157,0.4)' }}
+          >
+            🐾 Accepting Early Access
+          </span>
         </motion.div>
 
         {/* Heading */}
@@ -38,7 +52,7 @@ export const Hero: React.FC = () => {
           className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 drop-shadow-xl"
         >
           Revolutionising <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r" style={{ backgroundImage: 'linear-gradient(to right, #a8b8e8, #c8b4f0)' }}>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r" style={{ backgroundImage: 'linear-gradient(to right, #FF6B9D, #FF9F7F)' }}>
             Pet Care.
           </span>
         </motion.h1>
@@ -64,20 +78,26 @@ export const Hero: React.FC = () => {
           <Button
             size="lg"
             className="text-white border-none px-8 rounded-full flex items-center gap-2 group"
-            style={{ backgroundColor: '#1e3470', boxShadow: '0 8px 24px rgba(30,52,112,0.40)' }}
+            style={{ background: 'linear-gradient(135deg, #FF6B9D, #FF9F7F)', boxShadow: '0 8px 24px rgba(255,107,157,0.40)' }}
           >
             <span>Join the Waitlist</span>
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </Button>
 
-          {/* How it works Button */}
-          <Button
-            size="lg"
-            variant="secondary"
-            className="bg-white/10 text-white hover:bg-white/20 border-transparent hover:border-white/30 backdrop-blur-sm rounded-full px-8"
+          {/* Stay Updated Button */}
+          <a
+            href="https://whatsapp.com/channel/0029VbC9jX1CXC3Lhz8rRv3A"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            How it works
-          </Button>
+            <Button
+              size="lg"
+              variant="secondary"
+              className="bg-white/10 text-white hover:bg-white/20 border-transparent hover:border-white/30 backdrop-blur-sm rounded-full px-8"
+            >
+              Stay Updated
+            </Button>
+          </a>
         </motion.div>
 
         {/* Footer Features */}
@@ -85,20 +105,21 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="mt-12 flex flex-wrap justify-center gap-6 md:gap-12 text-sm font-medium text-gray-300"
+          className="mt-12 flex flex-wrap justify-center gap-3 text-sm font-semibold"
         >
-          <div className="flex items-center gap-2">
-            <CheckCircle2 size={16} style={{ color: '#c8d4f0' }} />
-            <span>At-home Diagnostics</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 size={16} style={{ color: '#c8d4f0' }} />
-            <span>Expert Vets</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 size={16} style={{ color: '#c8d4f0' }} />
-            <span>No Hidden Costs</span>
-          </div>
+          {[
+            { icon: '🏥', label: 'At-home Diagnostics' },
+            { icon: '👩‍⚕️', label: 'Expert Vets' },
+            { icon: '💸', label: 'No Hidden Costs' },
+          ].map(({ icon, label }) => (
+            <span
+              key={label}
+              className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-white/90"
+              style={{ backgroundColor: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)', backdropFilter: 'blur(4px)' }}
+            >
+              {icon} {label}
+            </span>
+          ))}
         </motion.div>
       </div>
 
