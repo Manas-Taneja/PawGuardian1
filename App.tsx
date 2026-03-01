@@ -3,7 +3,7 @@ import { Navbar } from './components/Layout/Navbar';
 import { Footer } from './components/Layout/Footer';
 import { Hero } from './components/Sections/Hero';
 import { ValueProp } from './components/Sections/ValueProp';
-import { HowItWorks } from './components/Sections/HowItWorks';
+
 import { Plans } from './components/Sections/Plans';
 import { FinalCTA } from './components/Sections/FinalCTA';
 import { AboutUs } from './components/Pages/AboutUs';
@@ -63,7 +63,7 @@ function App() {
             <Hero onOpenBooking={openBooking} />
             <ValueProp />
             <Empathy />
-            <HowItWorks />
+
             <Timeline />
             <Plans navigate={navigate} />
             <FinalCTA onOpenBooking={openBooking} navigate={navigate} />

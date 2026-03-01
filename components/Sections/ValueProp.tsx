@@ -34,7 +34,7 @@ const MaskedSymptomsCard = () => {
 
 export const ValueProp: React.FC = () => {
     return (
-        <section id="value" className="py-24 relative" style={{ backgroundColor: '#f0fdf4' }}>
+        <section id="value" className="py-24 relative" style={{ backgroundColor: '#f8f4e8' }}>
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <motion.h2
@@ -63,18 +63,8 @@ export const ValueProp: React.FC = () => {
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="bg-white rounded-3xl p-8 border border-gray-100 shadow-xl shadow-gray-200/50 h-fit w-full max-w-lg mx-auto lg:mx-0"
+                        className="w-full max-w-lg mx-auto lg:mx-0"
                     >
-                        <div className="flex items-start justify-between mb-8">
-                            <div>
-                                <h3 className="text-xl font-bold text-gray-900">The Cost of Waiting</h3>
-                                <p className="text-sm text-gray-500 mt-1">Avg. lifetime medical expenses</p>
-                            </div>
-                            <div className="bg-purple-50 p-2.5 rounded-xl text-purple-500">
-                                <Activity size={24} />
-                            </div>
-                        </div>
-
                         <MaskedSymptomsCard />
                     </motion.div>
 
