@@ -20,9 +20,10 @@ const CostComparison = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.5, type: "spring" }}
-                        className="absolute -top-10 bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-bold shadow-sm border border-green-200"
+                        className="absolute -top-10 text-xs px-3 py-1 rounded-full font-bold shadow-sm"
+                        style={{ backgroundColor: '#FFE66D', color: '#7a5c00', border: '1px solid rgba(255,230,109,0.6)' }}
                     >
-                        Save 73%
+                        🎉 Save 73%
                     </motion.div>
                     <span className="font-bold text-green-600 text-4xl">₹1.2L</span>
                     <div className="h-1.5 w-16 bg-green-400 rounded-full shadow-lg shadow-green-200"></div>
@@ -36,7 +37,7 @@ const CostComparison = () => {
                     <AlertCircle size={18} />
                 </div>
                 <p className="text-sm text-purple-900 leading-relaxed font-medium">
-                    Pets instinctively hide pain. <span className="font-bold text-purple-700">68% mask symptoms</span>, making early detection through data vital.
+                    🐾 Pets instinctively hide pain. <span className="font-bold text-purple-700">68% mask symptoms</span>, making early detection through data vital.
                 </p>
             </div>
         </div>
@@ -97,11 +98,14 @@ export const ValueProp: React.FC = () => {
                         </div>
 
                         <div className="grid gap-5">
-                            <Card className="hover:border-[#1e3470]/40 group transition-all duration-300">
+                            <Card className="hover:border-[#FF6B9D]/40 group transition-all duration-300">
                                 <div className="flex items-start gap-4">
-                                    <div className="group-hover:text-white transition-colors p-3 rounded-xl" style={{ backgroundColor: 'rgba(30,52,112,0.10)', color: '#1e3470' }}
-                                        onMouseEnter={(e) => { const d = e.currentTarget; d.style.backgroundColor = '#1e3470'; d.style.color = 'white'; }}
-                                        onMouseLeave={(e) => { const d = e.currentTarget; d.style.backgroundColor = 'rgba(30,52,112,0.10)'; d.style.color = '#1e3470'; }}>
+                                    <div
+                                        className="p-3 rounded-xl transition-colors"
+                                        style={{ backgroundColor: 'rgba(255,107,157,0.10)', color: '#FF6B9D' }}
+                                        onMouseEnter={(e) => { const d = e.currentTarget; d.style.backgroundColor = '#FF6B9D'; d.style.color = 'white'; }}
+                                        onMouseLeave={(e) => { const d = e.currentTarget; d.style.backgroundColor = 'rgba(255,107,157,0.10)'; d.style.color = '#FF6B9D'; }}
+                                    >
                                         <AlertCircle size={24} />
                                     </div>
                                     <div>
@@ -111,9 +115,14 @@ export const ValueProp: React.FC = () => {
                                 </div>
                             </Card>
 
-                            <Card className="hover:border-purple-300 group transition-all duration-300">
+                            <Card className="hover:border-[#4ECDC4]/40 group transition-all duration-300">
                                 <div className="flex items-start gap-4">
-                                    <div className="bg-purple-100 group-hover:bg-purple-500 group-hover:text-white transition-colors p-3 rounded-xl text-purple-600">
+                                    <div
+                                        className="p-3 rounded-xl transition-colors"
+                                        style={{ backgroundColor: 'rgba(78,205,196,0.12)', color: '#4ECDC4' }}
+                                        onMouseEnter={(e) => { const d = e.currentTarget; d.style.backgroundColor = '#4ECDC4'; d.style.color = 'white'; }}
+                                        onMouseLeave={(e) => { const d = e.currentTarget; d.style.backgroundColor = 'rgba(78,205,196,0.12)'; d.style.color = '#4ECDC4'; }}
+                                    >
                                         <Home size={24} />
                                     </div>
                                     <div>
@@ -123,9 +132,14 @@ export const ValueProp: React.FC = () => {
                                 </div>
                             </Card>
 
-                            <Card className="hover:border-green-300 group transition-all duration-300">
+                            <Card className="hover:border-[#FFE66D]/60 group transition-all duration-300">
                                 <div className="flex items-start gap-4">
-                                    <div className="bg-green-100 group-hover:bg-green-500 group-hover:text-white transition-colors p-3 rounded-xl text-green-600">
+                                    <div
+                                        className="p-3 rounded-xl transition-colors"
+                                        style={{ backgroundColor: 'rgba(255,230,109,0.18)', color: '#d4a500' }}
+                                        onMouseEnter={(e) => { const d = e.currentTarget; d.style.backgroundColor = '#FFE66D'; d.style.color = '#7a5c00'; }}
+                                        onMouseLeave={(e) => { const d = e.currentTarget; d.style.backgroundColor = 'rgba(255,230,109,0.18)'; d.style.color = '#d4a500'; }}
+                                    >
                                         <Wallet size={24} />
                                     </div>
                                     <div>
