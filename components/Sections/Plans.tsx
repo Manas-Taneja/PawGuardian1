@@ -83,7 +83,7 @@ export const Plans: React.FC<PlansProps> = ({ navigate }) => {
                             </div>
 
                             <div className="mt-8">
-                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#FF9F7F' }} onClick={() => navigate('services')}>View Dog Plans</Button>
+                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#FF6B9D', boxShadow: '0 4px 14px rgba(255,107,157,0.35)' }} onClick={() => navigate('services')}>View Dog Plans</Button>
                             </div>
                         </motion.div>
                     </div>
@@ -126,7 +126,7 @@ export const Plans: React.FC<PlansProps> = ({ navigate }) => {
                             </div>
 
                             <div className="mt-8">
-                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#C4B5FD', color: '#3B0764' }} onClick={() => navigate('services')}>View Cat Plans</Button>
+                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#FF6B9D', boxShadow: '0 4px 14px rgba(255,107,157,0.35)' }} onClick={() => navigate('services')}>View Cat Plans</Button>
                             </div>
                         </motion.div>
                     </div>
@@ -135,7 +135,7 @@ export const Plans: React.FC<PlansProps> = ({ navigate }) => {
             </div>
 
             {/* Unified Banner */}
-            <div className="py-4 text-center text-white text-sm font-medium relative z-20" style={{ backgroundColor: '#282239' }}>
+            <div className="mt-12 py-4 text-center text-white text-sm font-medium relative z-20" style={{ backgroundColor: '#282239' }}>
                 All plans include at-home care + digital records + expert consultations.
             </div>
         </section>
