@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button';
+import type { Page } from '../../App';
 
 const dogPlans = [
     {
@@ -38,7 +39,11 @@ const catPlans = [
     }
 ];
 
-export const Plans: React.FC = () => {
+interface PlansProps {
+  navigate: (page: Page) => void;
+}
+
+export const Plans: React.FC<PlansProps> = ({ navigate }) => {
     return (
         <section id="plans" className="py-0 bg-white relative">
             <div className="grid md:grid-cols-2 min-h-[800px]">
@@ -78,7 +83,7 @@ export const Plans: React.FC = () => {
                             </div>
 
                             <div className="mt-8">
-                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#FF9F7F' }}>View Dog Plans</Button>
+                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#FF9F7F' }} onClick={() => navigate('services')}>View Dog Plans</Button>
                             </div>
                         </motion.div>
                     </div>
@@ -121,7 +126,7 @@ export const Plans: React.FC = () => {
                             </div>
 
                             <div className="mt-8">
-                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#C4B5FD', color: '#3B0764' }}>View Cat Plans</Button>
+                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#C4B5FD', color: '#3B0764' }} onClick={() => navigate('services')}>View Cat Plans</Button>
                             </div>
                         </motion.div>
                     </div>

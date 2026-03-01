@@ -61,7 +61,7 @@ function App() {
             <Hero onOpenBooking={openBooking} />
             <ValueProp />
             <HowItWorks />
-            <Plans />
+            <Plans navigate={navigate} />
             <FinalCTA />
           </main>
         ) : currentPage === 'about' ? (
