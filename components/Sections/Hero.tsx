@@ -13,13 +13,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?q=80&w=2070&auto=format&fit=crop"
-          alt="Veterinarian with Cat"
+          src="/hero-bg-sunset.jpg"
+          alt="Sunset beach with pet parent and pets"
           className="w-full h-full object-cover"
         />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-slate-900/40" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent" />
+        {/* Brand overlay */}
+        <div className="absolute inset-0 mix-blend-multiply opacity-30" style={{ backgroundColor: '#002347' }} />
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0, 35, 71, 0.5)' }} />
+        <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(to top, rgba(0, 35, 71, 0.95), transparent)' }} />
         {/* Decorative paw print — bottom left */}
         <div className="absolute bottom-8 left-8 opacity-10 pointer-events-none select-none z-0">
           <svg width="120" height="120" viewBox="0 0 120 120" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
         >
           <span
             className="flex items-center gap-1.5 text-xs font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full"
-            style={{ backgroundColor: 'rgba(0,63,125,0.25)', color: '#bfdbfe', border: '1px solid rgba(0,63,125,0.4)' }}
+            style={{ backgroundColor: 'rgba(255,142,0,0.15)', color: '#FF8E00', border: '1px solid rgba(255,142,0,0.3)' }}
           >
             <PawPrint size={12} /> Accepting Early Access
           </span>
@@ -56,7 +57,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 drop-shadow-xl"
         >
           Revolutionising <br />
-          <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(to right, #003F7D, #003366)' }}>
+          <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(to right, #FF8E00, #FD7702)' }}>
             Pet Care.
           </span>
         </motion.h1>
@@ -83,7 +84,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             size="lg"
             onClick={onOpenBooking}
             className="text-white border-none px-8 rounded-full flex items-center gap-2 group"
-            style={{ background: 'linear-gradient(135deg, #003F7D, #003366)', boxShadow: '0 8px 24px rgba(0,63,125,0.40)' }}
+            style={{ background: 'linear-gradient(135deg, #FF8E00, #FD7702)', boxShadow: '0 8px 24px rgba(255,142,0,0.40)' }}
           >
             <span>Join the Waitlist</span>
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
