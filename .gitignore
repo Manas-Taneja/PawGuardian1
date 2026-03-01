@@ -31,3 +31,4 @@ AGENTS.md
 .agents/
 
 .env
+.mcp.json
