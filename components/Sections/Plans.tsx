@@ -35,12 +35,12 @@ const catPlans = [
     {
         title: "Senior Cat",
         range: "7+ years",
-        features: ["Renal & liver monitoring", "Thyroid screening", "Cancer markers", "Pain & comfort assessment"]
+        features: ["Renal & liver monitoring", "Thyroid screening", "Pain & comfort assessment"]
     }
 ];
 
 interface PlansProps {
-  navigate: (page: Page) => void;
+    navigate: (page: Page) => void;
 }
 
 export const Plans: React.FC<PlansProps> = ({ navigate }) => {

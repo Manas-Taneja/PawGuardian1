@@ -99,7 +99,7 @@ export const ValueProp: React.FC = () => {
                         </div>
 
                         <div className="grid gap-5">
-                            <Card className="hover:border-[#6272E8]/40 transition-all duration-300">
+                            <Card className="hover:border-[#FF6B9D]/40 transition-all duration-300 group">
                                 <div className="flex items-start gap-4">
                                     <div
                                         className="p-3 rounded-xl transition-colors"
@@ -111,12 +111,14 @@ export const ValueProp: React.FC = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-lg font-bold text-gray-900">Early Detection, Not Late Panic</h4>
-                                        <p className="text-gray-600 text-sm mt-1">Regular at-home diagnostics establish baselines and catch issues before they become life-threatening.</p>
+                                        <div className="overflow-hidden transition-all duration-300 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-1">
+                                            <p className="text-gray-600 text-sm">Regular at-home diagnostics establish baselines and catch issues before they become life-threatening.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </Card>
 
-                            <Card className="hover:border-[#4ECDC4]/40 transition-all duration-300">
+                            <Card className="hover:border-[#4ECDC4]/40 transition-all duration-300 group">
                                 <div className="flex items-start gap-4">
                                     <div
                                         className="p-3 rounded-xl transition-colors"
@@ -128,12 +130,14 @@ export const ValueProp: React.FC = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-lg font-bold text-gray-900">Care Without the Clinic Stress</h4>
-                                        <p className="text-gray-600 text-sm mt-1">No travel. No anxious pets. No waiting rooms. We collect samples, vaccinate, and consult—right at home.</p>
+                                        <div className="overflow-hidden transition-all duration-300 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-1">
+                                            <p className="text-gray-600 text-sm">No travel. No anxious pets. No waiting rooms. We collect samples, vaccinate, and consult—right at home.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </Card>
 
-                            <Card className="hover:border-[#FFE66D]/60 transition-all duration-300">
+                            <Card className="hover:border-[#FFE66D]/60 transition-all duration-300 group">
                                 <div className="flex items-start gap-4">
                                     <div
                                         className="p-3 rounded-xl transition-colors"
@@ -145,7 +149,9 @@ export const ValueProp: React.FC = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-lg font-bold text-gray-900">Predictable, Affordable Healthcare</h4>
-                                        <p className="text-gray-600 text-sm mt-1">Subscription pricing replaces surprise bills, emergency expenses, and last-minute decisions.</p>
+                                        <div className="overflow-hidden transition-all duration-300 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-1">
+                                            <p className="text-gray-600 text-sm">Subscription pricing replaces surprise bills, emergency expenses, and last-minute decisions.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </Card>
