@@ -67,8 +67,8 @@ const Field: React.FC<FieldProps> = ({ label, name, type, value, onChange, requi
 const SuccessView: React.FC<{ onClose: () => void }> = ({ onClose }) => (
   <div className="py-8 flex flex-col items-center text-center gap-4">
     <CheckCircle2 size={48} style={{ color: '#1e3470' }} />
-    <h3 className="text-xl font-bold" style={{ color: '#282239' }}>You're all set!</h3>
-    <p className="text-gray-600">We'll be in touch soon to confirm your slot.</p>
+    <h3 className="text-xl font-bold" style={{ color: '#282239' }}>You're on the waitlist!</h3>
+    <p className="text-gray-600">We'll be in touch as spots open up.</p>
     <Button
       size="md"
       className="mt-2 text-white border-none"
