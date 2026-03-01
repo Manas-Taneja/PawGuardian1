@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Layers, Truck, Smartphone, PiggyBank } from 'lucide-react';
+import { Layers, Truck, Smartphone, PiggyBank, Sparkles } from 'lucide-react';
 
 const pillars = [
   {
@@ -42,7 +42,7 @@ export const HowItWorks: React.FC = () => {
             className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-2"
             style={{ backgroundColor: '#FFE66D', color: '#7a5c00' }}
           >
-            ✨ The 4-Pillar Model
+            <Sparkles size={12} className="inline mr-1" /> The 4-Pillar Model
           </span>
           <h2 className="mt-2 text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
             A Complete Preventive Care Ecosystem

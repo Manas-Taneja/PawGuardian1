@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '../ui/Button';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, PawPrint, Stethoscope, UserRound, Wallet } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ export const Hero: React.FC = () => {
           className="w-full h-full object-cover"
         />
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-slate-900/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent" />
         {/* Decorative paw print — bottom left */}
         <div className="absolute bottom-8 left-8 opacity-10 pointer-events-none select-none z-0">
@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
             className="flex items-center gap-1.5 text-xs font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full"
             style={{ backgroundColor: 'rgba(255,107,157,0.25)', color: '#ffc8dd', border: '1px solid rgba(255,107,157,0.4)' }}
           >
-            🐾 Accepting Early Access
+            <PawPrint size={12} /> Accepting Early Access
           </span>
         </motion.div>
 
@@ -107,15 +107,15 @@ export const Hero: React.FC = () => {
           transition={{ delay: 0.8 }}
           className="mt-12 flex flex-wrap justify-center gap-3 text-sm font-semibold"
         >
-          {[
-            { icon: '🏥', label: 'At-home Diagnostics' },
-            { icon: '👩‍⚕️', label: 'Expert Vets' },
-            { icon: '💸', label: 'No Hidden Costs' },
-          ].map(({ icon, label }) => (
+          {([
+            { icon: <Stethoscope size={14} />, label: 'At-home Diagnostics' },
+            { icon: <UserRound size={14} />, label: 'Expert Vets' },
+            { icon: <Wallet size={14} />, label: 'No Hidden Costs' },
+          ] as { icon: React.ReactNode; label: string }[]).map(({ icon, label }) => (
             <span
               key={label}
               className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-white/90"
-              style={{ backgroundColor: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)', backdropFilter: 'blur(4px)' }}
+              style={{ backgroundColor: 'rgba(255,255,255,0.18)', border: '1px solid rgba(255,255,255,0.25)' }}
             >
               {icon} {label}
             </span>

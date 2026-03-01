@@ -55,7 +55,7 @@ export const Plans: React.FC = () => {
                         >
                             <h2 className="text-6xl md:text-8xl font-black tracking-tighter absolute top-10 left-10 select-none" style={{ color: 'rgba(255,159,127,0.5)' }}>DOG</h2>
                             <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative z-10">
-                                For <span style={{ color: '#FF9F7F' }}>Dogs</span> 🐶
+                                For <span style={{ color: '#FF9F7F' }}>Dogs</span>
                             </h3>
                             <p className="text-lg text-gray-600 mb-8 max-w-md">Comprehensive care plans tailored for canine physiology and lifestyle needs.</p>
 
@@ -98,7 +98,7 @@ export const Plans: React.FC = () => {
                         >
                             <h2 className="text-6xl md:text-8xl font-black tracking-tighter absolute top-10 right-10 select-none" style={{ color: 'rgba(196,181,253,0.5)' }}>CAT</h2>
                             <h3 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 relative z-10">
-                                For <span style={{ color: '#C4B5FD' }}>Cats</span> 🐱
+                                For <span style={{ color: '#C4B5FD' }}>Cats</span>
                             </h3>
                             <p className="text-lg text-gray-600 mb-8 max-w-md">Stress-free, at-home care specifically designed for sensitive felines.</p>
 

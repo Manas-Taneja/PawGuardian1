@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { AlertCircle, Home, Wallet, Activity } from 'lucide-react';
+import { AlertCircle, Home, Wallet, Activity, PawPrint, TrendingDown } from 'lucide-react';
 import { Card } from '../ui/Card';
 
 const CostComparison = () => {
@@ -24,7 +24,7 @@ const CostComparison = () => {
                         className="absolute -top-10 text-xs px-3 py-1 rounded-full font-bold shadow-sm"
                         style={{ backgroundColor: '#FFE66D', color: '#7a5c00', border: '1px solid rgba(255,230,109,0.6)' }}
                     >
-                        🎉 Save 73%
+                        <TrendingDown size={12} className="inline mr-1" /> Save 73%
                     </motion.div>
                     <span className="font-bold text-green-600 text-4xl">₹1.2L</span>
                     <div className="h-1.5 w-16 bg-green-400 rounded-full shadow-lg shadow-green-200"></div>
@@ -38,7 +38,7 @@ const CostComparison = () => {
                     <AlertCircle size={18} />
                 </div>
                 <p className="text-sm text-purple-900 leading-relaxed font-medium">
-                    🐾 Pets instinctively hide pain. <span className="font-bold text-purple-700">68% mask symptoms</span>, making early detection through data vital.
+                    <PawPrint size={14} className="inline mr-1 text-purple-500" /> Pets instinctively hide pain. <span className="font-bold text-purple-700">68% mask symptoms</span>, making early detection through data vital.
                 </p>
             </div>
         </div>
