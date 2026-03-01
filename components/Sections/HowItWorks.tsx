@@ -7,25 +7,29 @@ const pillars = [
     icon: Layers,
     title: "Smart Subscription",
     desc: "Personalised plans with regular diagnostics, baseline tracking, and AI-assisted health insights.",
-    color: "text-[#1e3470] bg-[#1e3470]/10"
+    iconStyle: { backgroundColor: 'rgba(255,107,157,0.12)', color: '#FF6B9D' },
+    ghostColor: 'rgba(255,107,157,0.08)',
   },
   {
     icon: Truck,
     title: "Doorstep Veterinary Care",
     desc: "At-home sample collection, vaccinations, and tele-consults based on real test results.",
-    color: "text-purple-600 bg-purple-50"
+    iconStyle: { backgroundColor: 'rgba(78,205,196,0.12)', color: '#4ECDC4' },
+    ghostColor: 'rgba(78,205,196,0.08)',
   },
   {
     icon: Smartphone,
     title: "Digital Health Platform",
     desc: "All records, reminders, reports, and vet guidance—accessible in one place.",
-    color: "text-[#1e3470] bg-[#1e3470]/10"
+    iconStyle: { backgroundColor: 'rgba(255,159,127,0.12)', color: '#FF9F7F' },
+    ghostColor: 'rgba(255,159,127,0.08)',
   },
   {
     icon: PiggyBank,
     title: "Affordable by Design",
     desc: "Early intervention means fewer emergencies, no transport costs, and lower lifetime spend.",
-    color: "text-green-600 bg-green-50"
+    iconStyle: { backgroundColor: 'rgba(196,181,253,0.20)', color: '#9B6DFF' },
+    ghostColor: 'rgba(196,181,253,0.10)',
   }
 ];
 
@@ -34,7 +38,12 @@ export const HowItWorks: React.FC = () => {
     <section id="how-it-works" className="py-24 border-t" style={{ backgroundColor: '#f8f4e8', borderColor: 'rgba(30,52,112,0.10)' }}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
-          <span className="font-semibold tracking-wide uppercase text-sm" style={{ color: '#1e3470' }}>The 4-Pillar Model</span>
+          <span
+            className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-2"
+            style={{ backgroundColor: '#FFE66D', color: '#7a5c00' }}
+          >
+            ✨ The 4-Pillar Model
+          </span>
           <h2 className="mt-2 text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
             A Complete Preventive Care Ecosystem
           </h2>
@@ -52,10 +61,16 @@ export const HowItWorks: React.FC = () => {
               className="relative bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden"
               style={{ '--tw-shadow-color': 'rgba(30,52,112,0.08)' } as React.CSSProperties}
             >
-              <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 ${pillar.color} group-hover:scale-110 transition-transform`}>
+              <div
+                className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"
+                style={pillar.iconStyle}
+              >
                 <pillar.icon size={28} strokeWidth={1.5} />
               </div>
-              <div className="text-7xl font-black text-gray-100 absolute -top-2 -right-1 pointer-events-none select-none group-hover:text-gray-50 transition-colors leading-none">
+              <div
+                className="text-7xl font-black absolute -top-2 -right-1 pointer-events-none select-none leading-none"
+                style={{ color: pillar.ghostColor }}
+              >
                 {index + 1}
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{pillar.title}</h3>
