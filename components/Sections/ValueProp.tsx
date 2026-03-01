@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { AlertCircle, Home, Wallet, Activity, PawPrint, TrendingDown } from 'lucide-react';
+import { AlertCircle, Home, Wallet, Activity, ChevronDown } from 'lucide-react';
 import { Card } from '../ui/Card';
 
 const MaskedSymptomsCard = () => {
@@ -96,10 +96,13 @@ export const ValueProp: React.FC = () => {
                                     >
                                         <AlertCircle size={24} />
                                     </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900">Early Detection, Not Late Panic</h4>
-                                        <div className="overflow-hidden transition-all duration-300 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-1">
-                                            <p className="text-gray-600 text-sm">Regular at-home diagnostics establish baselines and catch issues before they become life-threatening.</p>
+                                    <div className="flex-1">
+                                        <div className="flex items-center justify-between">
+                                            <h4 className="text-xl font-bold text-gray-900 group-hover:text-[#003F7D] transition-colors">Early Detection, Not Late Panic</h4>
+                                            <ChevronDown size={20} className="text-gray-400 group-hover:text-[#003F7D] group-hover:rotate-180 transition-all duration-300" />
+                                        </div>
+                                        <div className="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-32 group-hover:opacity-100 group-hover:mt-2">
+                                            <p className="text-gray-600 text-sm leading-relaxed">Regular at-home diagnostics establish baselines and catch issues before they become life-threatening.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -115,10 +118,13 @@ export const ValueProp: React.FC = () => {
                                     >
                                         <Home size={24} />
                                     </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900">Care Without the Clinic Stress</h4>
-                                        <div className="overflow-hidden transition-all duration-300 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-1">
-                                            <p className="text-gray-600 text-sm">No travel. No anxious pets. No waiting rooms. We collect samples, vaccinate, and consult—right at home.</p>
+                                    <div className="flex-1">
+                                        <div className="flex items-center justify-between">
+                                            <h4 className="text-xl font-bold text-gray-900 group-hover:text-[#003366] transition-colors">Care Without the Clinic Stress</h4>
+                                            <ChevronDown size={20} className="text-gray-400 group-hover:text-[#003366] group-hover:rotate-180 transition-all duration-300" />
+                                        </div>
+                                        <div className="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-32 group-hover:opacity-100 group-hover:mt-2">
+                                            <p className="text-gray-600 text-sm leading-relaxed">No travel. No anxious pets. No waiting rooms. We collect samples, vaccinate, and consult—right at home.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -134,10 +140,13 @@ export const ValueProp: React.FC = () => {
                                     >
                                         <Wallet size={24} />
                                     </div>
-                                    <div>
-                                        <h4 className="text-lg font-bold text-gray-900">Predictable, Affordable Healthcare</h4>
-                                        <div className="overflow-hidden transition-all duration-300 max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 group-hover:mt-1">
-                                            <p className="text-gray-600 text-sm">Subscription pricing replaces surprise bills, emergency expenses, and last-minute decisions.</p>
+                                    <div className="flex-1">
+                                        <div className="flex items-center justify-between">
+                                            <h4 className="text-xl font-bold text-gray-900 group-hover:text-[#FF5003] transition-colors">Predictable, Affordable Healthcare</h4>
+                                            <ChevronDown size={20} className="text-gray-400 group-hover:text-[#FF5003] group-hover:rotate-180 transition-all duration-300" />
+                                        </div>
+                                        <div className="overflow-hidden transition-all duration-500 max-h-0 opacity-0 group-hover:max-h-32 group-hover:opacity-100 group-hover:mt-2">
+                                            <p className="text-gray-600 text-sm leading-relaxed">Subscription pricing replaces surprise bills, emergency expenses, and last-minute decisions.</p>
                                         </div>
                                     </div>
                                 </div>

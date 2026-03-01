@@ -10,6 +10,8 @@ import { AboutUs } from './components/Pages/AboutUs';
 import { Services } from './components/Pages/Services';
 import { Vets } from './components/Pages/Vets';
 import { BookingModal } from './components/ui/BookingModal';
+import { Empathy } from './components/Sections/Empathy';
+import { Timeline } from './components/Sections/Timeline';
 import { motion } from 'framer-motion';
 
 export type Page = 'home' | 'about' | 'services' | 'vets';
@@ -60,7 +62,9 @@ function App() {
           <main>
             <Hero onOpenBooking={openBooking} />
             <ValueProp />
+            <Empathy />
             <HowItWorks />
+            <Timeline />
             <Plans navigate={navigate} />
             <FinalCTA onOpenBooking={openBooking} navigate={navigate} />
           </main>

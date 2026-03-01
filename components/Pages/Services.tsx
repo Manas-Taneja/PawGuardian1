@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Syringe, Stethoscope, Video, HeartPulse, ShieldCheck, Activity, Brain } from 'lucide-react';
+import { Button } from '../ui/Button';
 import {
     Syringe,
     FlaskConical,
@@ -19,6 +20,42 @@ import {
 import { Button } from '../ui/Button';
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
+
+const dogPlans = [
+    {
+        title: "Puppy Care",
+        range: "0–1.5 years",
+        features: ["Core vaccinations", "Deworming schedule", "Socialisation guidance", "Nutritional counselling"]
+    },
+    {
+        title: "Adult Dog",
+        range: "2–7 years",
+        features: ["Annual blood panels", "Parasite prevention", "Booster vaccines", "Mobility & joint checks"]
+    },
+    {
+        title: "Senior Dog",
+        range: "7+ years",
+        features: ["Advanced bloodwork", "Cardiac & renal screening", "Arthritis management", "Cognitive health monitoring"]
+    }
+];
+
+const catPlans = [
+    {
+        title: "Kitten Care",
+        range: "0–1.5 years",
+        features: ["FVRCP & Rabies vaccines", "Deworming", "Spay / neuter guidance", "Microchipping"]
+    },
+    {
+        title: "Adult Cat",
+        range: "2–7 years",
+        features: ["Annual wellness exams", "Dental health checks", "Parasite prevention", "Weight management"]
+    },
+    {
+        title: "Senior Cat",
+        range: "7+ years",
+        features: ["Renal & liver monitoring", "Thyroid screening", "Pain & comfort assessment"]
+    }
+];
 
 const services = [
     {
@@ -309,7 +346,7 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                     />
                     <div
                         className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full blur-[100px]"
-                        style={{ backgroundColor: 'rgba(124,58,237,0.15)' }}
+                        style={{ backgroundColor: 'rgba(255,142,0,0.15)' }}
                     />
                     <div
                         className="absolute -bottom-20 right-1/4 w-[300px] h-[300px] rounded-full blur-[100px]"
@@ -317,87 +354,133 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                     />
                 </div>
 
-                {/* Decorative paw watermark */}
-                <div className="absolute right-12 top-1/2 -translate-y-1/2 opacity-[0.04] pointer-events-none select-none">
-                    <PawPrint size={320} strokeWidth={0.8} className="text-white" />
-                </div>
-
-                <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-                    <motion.div
-                        initial={{ opacity: 0, y: -12 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="flex items-center justify-center gap-2 mb-6"
-                    >
-                        <span
-                            className="w-1.5 h-1.5 rounded-full"
-                            style={{ backgroundColor: '#a8b8e8' }}
-                        />
-                        <span
-                            className="text-xs font-bold tracking-[0.2em] uppercase"
-                            style={{ color: '#a8b4d8' }}
+                <div className="max-w-7xl mx-auto px-6 relative z-10 pt-16">
+                    <div className="text-center mb-20 max-w-3xl mx-auto mt-24">
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight"
                         >
-                            What We Offer
-                        </span>
-                    </motion.div>
-
-                    <motion.h1
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.7 }}
-                        className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.05]"
-                    >
-                        Complete Care,{' '}
-                        <span
-                            className="text-transparent bg-clip-text"
-                            style={{
-                                backgroundImage: 'linear-gradient(to right, #a8b8e8, #c8b4f0)',
-                            }}
+                            Our <span style={{ color: '#FF8E00' }}>Services</span>
+                        </motion.h1>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1 }}
+                            className="text-xl text-gray-300 leading-relaxed"
                         >
-                            At Your Door.
-                        </span>
-                    </motion.h1>
+                            Complete, proactive healthcare delivered right to your living room.
+                            Choose our autopilot subscription or book individual services as needed.
+                        </motion.p>
+                    </div>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2, duration: 0.7 }}
-                        className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
-                    >
-                        From first vaccinations to senior diagnostics — every service your pet needs,
-                        delivered by licensed vets in the comfort of your home.
-                    </motion.p>
+                    {/* NEW SECTION: Subscriptions */}
+                    <div className="mb-32">
+                        <div className="text-center mb-16">
+                            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">
+                                Subscription Plans (Auto-Pilot)
+                            </h2>
+                            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+                                The ultimate peace of mind. All one-time services below are included in these comprehensive life-stage plans.
+                            </p>
+                        </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 16 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4, duration: 0.6 }}
-                        className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
-                    >
-                        <Button
-                            size="lg"
-                            className="text-white border-none shadow-lg rounded-full px-8 flex items-center gap-2 group"
-                            style={{
-                                backgroundColor: '#FF8E00',
-                                boxShadow: '0 8px 24px rgba(255,142,0,0.45)',
-                            }}
-                            onClick={onOpenBooking}
-                        >
-                            <CalendarCheck size={18} />
-                            <span>Book a Service</span>
-                            <ArrowRight
-                                size={16}
-                                className="group-hover:translate-x-1 transition-transform"
-                            />
-                        </Button>
-                        <Button
-                            size="lg"
-                            variant="secondary"
-                            className="bg-white/10 text-white hover:bg-white/20 border-white/20 hover:border-white/40 backdrop-blur-sm rounded-full px-8"
-                            onClick={scrollToPlans}
-                        >
-                            View Plans & Pricing
-                        </Button>
-                    </motion.div>
+                        <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
+                            {/* Dog Subscriptions */}
+                            <motion.div
+                                initial={{ opacity: 0, x: -30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="bg-white p-8 md:p-12 rounded-3xl border shadow-xl"
+                                style={{ borderColor: 'rgba(0,63,125,0.1)' }}
+                            >
+                                <h3 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                                    <ShieldCheck size={32} style={{ color: '#FF8E00' }} />
+                                    For Dogs
+                                </h3>
+                                <div className="space-y-6">
+                                    {dogPlans.map((plan, i) => (
+                                        <div
+                                            key={i}
+                                            className="bg-gray-50 p-6 rounded-2xl border transition-all hover:-translate-y-1 hover:shadow-md"
+                                            style={{ borderColor: 'rgba(0,63,125,0.05)' }}
+                                            onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = '#FF8E00'; }}
+                                            onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(0,63,125,0.05)'; }}
+                                        >
+                                            <div className="flex justify-between items-center mb-3">
+                                                <h4 className="font-bold text-gray-900 text-lg">{plan.title}</h4>
+                                                <span className="text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider" style={{ backgroundColor: 'rgba(255,142,0,0.15)', color: '#cc7200' }}>{plan.range}</span>
+                                            </div>
+                                            <ul className="space-y-2">
+                                                {plan.features.map((feature, j) => (
+                                                    <li key={j} className="flex items-center gap-2 text-sm text-gray-600">
+                                                        <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#003F7D' }} />
+                                                        {feature}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="mt-8">
+                                    <Button
+                                        className="w-full text-white border-none shadow-lg py-4 text-lg hidden md:block"
+                                        style={{ backgroundColor: '#003F7D', boxShadow: '0 8px 24px rgba(0,63,125,0.25)' }}
+                                        onClick={onOpenBooking}
+                                    >
+                                        Enroll Your Dog
+                                    </Button>
+                                </div>
+                            </motion.div>
+
+                            {/* Cat Subscriptions */}
+                            <motion.div
+                                initial={{ opacity: 0, x: 30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                className="bg-white p-8 md:p-12 rounded-3xl border shadow-xl"
+                                style={{ borderColor: 'rgba(0,63,125,0.1)' }}
+                            >
+                                <h3 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                                    <Brain size={32} style={{ color: '#FD7702' }} />
+                                    For Cats
+                                </h3>
+                                <div className="space-y-6">
+                                    {catPlans.map((plan, i) => (
+                                        <div
+                                            key={i}
+                                            className="bg-gray-50 p-6 rounded-2xl border transition-all hover:-translate-y-1 hover:shadow-md"
+                                            style={{ borderColor: 'rgba(0,63,125,0.05)' }}
+                                            onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = '#FD7702'; }}
+                                            onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(0,63,125,0.05)'; }}
+                                        >
+                                            <div className="flex justify-between items-center mb-3">
+                                                <h4 className="font-bold text-gray-900 text-lg">{plan.title}</h4>
+                                                <span className="text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider" style={{ backgroundColor: 'rgba(253,119,2,0.15)', color: '#cc5f00' }}>{plan.range}</span>
+                                            </div>
+                                            <ul className="space-y-2">
+                                                {plan.features.map((feature, j) => (
+                                                    <li key={j} className="flex items-center gap-2 text-sm text-gray-600">
+                                                        <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#003F7D' }} />
+                                                        {feature}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="mt-8">
+                                    <Button
+                                        className="w-full text-white border-none shadow-lg py-4 text-lg hidden md:flex items-center justify-center gap-2"
+                                        style={{ backgroundColor: '#003F7D', boxShadow: '0 8px 24px rgba(0,63,125,0.25)' }}
+                                        onClick={onOpenBooking}
+                                    >
+                                        Enroll Your Cat
+                                    </Button>
+                                </div>
+                            </motion.div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -437,24 +520,19 @@ export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                 </div>
             </nav>
 
-            {/* ── Services Grid ──────────────────────────────────────────────── */}
+            {/* ── Services Grid (One-Time Services) ──────────────────────────────────────────────── */}
             <section id="services-plans" className="py-24 px-6 bg-white" style={{ paddingTop: '5rem' }}>
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <span
-                            className="font-semibold tracking-wide uppercase text-sm"
-                            style={{ color: '#003F7D' }}
-                        >
-                            Our Services
-                        </span>
-                        <h2 className="mt-2 text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
-                            Everything Under One{' '}
-                            <span style={{ color: '#003F7D' }}>Paw</span>
-                        </h2>
-                        <p className="mt-4 text-gray-500 max-w-xl mx-auto leading-relaxed">
-                            Each service is designed around one principle: zero-compromise care
-                            without disrupting your pet's safe routine.
-                        </p>
+                    {/* EXISTING SECTION: One-Time Services */}
+                    <div className="mb-16">
+                        <div className="text-center mb-12">
+                            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4">
+                                Individual Care Components
+                            </h2>
+                            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+                                Not ready for a subscription? Book these services one-time, anytime.
+                            </p>
+                        </div>
                     </div>
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
