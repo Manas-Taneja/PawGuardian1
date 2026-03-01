@@ -12,11 +12,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
     <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?q=80&w=2070&auto=format&fit=crop"
-          alt="Veterinarian with Cat"
+        {/* Animated Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-full object-cover"
-        />
+        >
+          <source src="/animated_hero_bg.mp4" type="video/mp4" />
+        </video>
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-slate-900/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent" />
