@@ -83,7 +83,7 @@ export const Plans: React.FC<PlansProps> = ({ navigate }) => {
                             </div>
 
                             <div className="mt-8">
-                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#FF6B9D', boxShadow: '0 4px 14px rgba(255,107,157,0.35)' }} onClick={() => navigate('services')}>View Dog Plans</Button>
+                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#6272E8', boxShadow: '0 4px 14px rgba(98,114,232,0.35)' }} onClick={() => navigate('services')}>View Dog Plans</Button>
                             </div>
                         </motion.div>
                     </div>
@@ -126,7 +126,7 @@ export const Plans: React.FC<PlansProps> = ({ navigate }) => {
                             </div>
 
                             <div className="mt-8">
-                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#FF6B9D', boxShadow: '0 4px 14px rgba(255,107,157,0.35)' }} onClick={() => navigate('services')}>View Cat Plans</Button>
+                                <Button className="text-white border-none shadow-lg" style={{ backgroundColor: '#6272E8', boxShadow: '0 4px 14px rgba(98,114,232,0.35)' }} onClick={() => navigate('services')}>View Cat Plans</Button>
                             </div>
                         </motion.div>
                     </div>

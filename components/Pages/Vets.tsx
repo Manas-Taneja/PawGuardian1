@@ -604,7 +604,7 @@ export const Vets: React.FC<VetsProps> = () => {
                         }
                       }}
                       className="flex-1 py-3.5 rounded-full font-semibold text-white text-sm transition-all cursor-pointer"
-                      style={{ backgroundColor: '#1e3470', boxShadow: '0 4px 14px rgba(30,52,112,0.30)' }}
+                      style={{ backgroundColor: '#6272E8', boxShadow: '0 4px 14px rgba(98,114,232,0.30)' }}
                     >
                       Next
                     </button>
@@ -613,7 +613,7 @@ export const Vets: React.FC<VetsProps> = () => {
                       type="submit"
                       disabled={isSubmitting}
                       className="flex-1 py-3.5 rounded-full font-semibold text-white text-sm transition-all disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
-                      style={{ backgroundColor: '#1e3470', boxShadow: '0 4px 14px rgba(30,52,112,0.30)' }}
+                      style={{ backgroundColor: '#6272E8', boxShadow: '0 4px 14px rgba(98,114,232,0.30)' }}
                     >
                       {isSubmitting ? 'Submitting…' : 'Submit Application'}
                     </button>

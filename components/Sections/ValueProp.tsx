@@ -21,13 +21,13 @@ const CostComparison = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.5, type: "spring" }}
-                        className="absolute -top-10 text-xs px-3 py-1 rounded-full font-bold shadow-sm"
+                        className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs px-3 py-1 rounded-full font-bold shadow-sm"
                         style={{ backgroundColor: '#FFE66D', color: '#7a5c00', border: '1px solid rgba(255,230,109,0.6)' }}
                     >
                         <TrendingDown size={12} className="inline mr-1" /> Save 73%
                     </motion.div>
                     <span className="font-bold text-4xl" style={{ color: '#1e3470' }}>₹1.2L</span>
-                    <div className="h-1.5 w-16 rounded-full shadow-lg" style={{ backgroundColor: '#FF6B9D', boxShadow: '0 4px 8px rgba(255,107,157,0.30)' }}></div>
+                    <div className="h-1.5 w-16 rounded-full shadow-lg" style={{ backgroundColor: '#6272E8', boxShadow: '0 4px 8px rgba(98,114,232,0.30)' }}></div>
                     <span className="text-sm font-bold text-gray-900">PawGuardian</span>
                 </div>
             </div>
@@ -99,13 +99,13 @@ export const ValueProp: React.FC = () => {
                         </div>
 
                         <div className="grid gap-5">
-                            <Card className="hover:border-[#FF6B9D]/40 transition-all duration-300">
+                            <Card className="hover:border-[#6272E8]/40 transition-all duration-300">
                                 <div className="flex items-start gap-4">
                                     <div
                                         className="p-3 rounded-xl transition-colors"
-                                        style={{ backgroundColor: 'rgba(255,107,157,0.10)', color: '#FF6B9D' }}
-                                        onMouseEnter={(e) => { const d = e.currentTarget; d.style.backgroundColor = '#FF6B9D'; d.style.color = 'white'; }}
-                                        onMouseLeave={(e) => { const d = e.currentTarget; d.style.backgroundColor = 'rgba(255,107,157,0.10)'; d.style.color = '#FF6B9D'; }}
+                                        style={{ backgroundColor: 'rgba(98,114,232,0.10)', color: '#6272E8' }}
+                                        onMouseEnter={(e) => { const d = e.currentTarget; d.style.backgroundColor = '#6272E8'; d.style.color = 'white'; }}
+                                        onMouseLeave={(e) => { const d = e.currentTarget; d.style.backgroundColor = 'rgba(98,114,232,0.10)'; d.style.color = '#6272E8'; }}
                                     >
                                         <AlertCircle size={24} />
                                     </div>

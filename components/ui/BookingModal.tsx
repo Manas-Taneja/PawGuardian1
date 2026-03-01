@@ -67,12 +67,12 @@ const Field: React.FC<FieldProps> = ({ label, name, type, value, onChange, requi
 const SuccessView: React.FC<{ onClose: () => void }> = ({ onClose }) => (
   <div className="py-8 flex flex-col items-center text-center gap-4">
     <CheckCircle2 size={48} style={{ color: '#1e3470' }} />
-    <h3 className="text-xl font-bold" style={{ color: '#282239' }}>You're all set!</h3>
-    <p className="text-gray-600">We'll be in touch soon to confirm your slot.</p>
+    <h3 className="text-xl font-bold" style={{ color: '#282239' }}>You're on the waitlist!</h3>
+    <p className="text-gray-600">We'll be in touch as spots open up.</p>
     <Button
       size="md"
       className="mt-2 text-white border-none"
-      style={{ backgroundColor: '#1e3470', boxShadow: '0 4px 14px rgba(30,52,112,0.30)' }}
+      style={{ backgroundColor: '#6272E8', boxShadow: '0 4px 14px rgba(98,114,232,0.30)' }}
       onClick={onClose}
     >
       Close
@@ -173,7 +173,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
           >
             {/* Header */}
             <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-[#1e3470]/10">
-              <h2 id="booking-modal-title" className="text-xl font-bold" style={{ color: '#282239' }}>Book a Slot</h2>
+              <div>
+                <h2 id="booking-modal-title" className="text-xl font-bold" style={{ color: '#282239' }}>Join the Waitlist</h2>
+                <p className="text-sm mt-0.5" style={{ color: '#a8b4d8' }}>We'll reach out as spots open up.</p>
+              </div>
               <button
                 onClick={onClose}
                 className="p-1.5 rounded-full hover:bg-[#1e3470]/10 transition-colors"
@@ -241,10 +244,10 @@ export const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) =
                       type="submit"
                       size="md"
                       className="w-full text-white border-none disabled:opacity-60"
-                      style={{ backgroundColor: '#1e3470', boxShadow: '0 4px 14px rgba(30,52,112,0.30)' }}
+                      style={{ backgroundColor: '#6272E8', boxShadow: '0 4px 14px rgba(98,114,232,0.30)' }}
                       disabled={isSubmitting}
                     >
-                      {isSubmitting ? 'Submitting…' : 'Submit'}
+                      {isSubmitting ? 'Joining…' : 'Join Waitlist'}
                     </Button>
                   </div>
                 </form>

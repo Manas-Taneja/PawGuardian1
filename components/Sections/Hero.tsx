@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
         >
           <span
             className="flex items-center gap-1.5 text-xs font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full"
-            style={{ backgroundColor: 'rgba(255,107,157,0.25)', color: '#ffc8dd', border: '1px solid rgba(255,107,157,0.4)' }}
+            style={{ backgroundColor: 'rgba(98,114,232,0.25)', color: '#c8d0ff', border: '1px solid rgba(98,114,232,0.4)' }}
           >
             <PawPrint size={12} /> Accepting Early Access
           </span>
@@ -56,7 +56,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 drop-shadow-xl"
         >
           Revolutionising <br />
-          <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(to right, #FF6B9D, #FF9F7F)' }}>
+          <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(to right, #6272E8, #7B93F0)' }}>
             Pet Care.
           </span>
         </motion.h1>
@@ -83,7 +83,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             size="lg"
             onClick={onOpenBooking}
             className="text-white border-none px-8 rounded-full flex items-center gap-2 group"
-            style={{ background: 'linear-gradient(135deg, #FF6B9D, #FF9F7F)', boxShadow: '0 8px 24px rgba(255,107,157,0.40)' }}
+            style={{ background: 'linear-gradient(135deg, #6272E8, #7B93F0)', boxShadow: '0 8px 24px rgba(98,114,232,0.40)' }}
           >
             <span>Join the Waitlist</span>
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />

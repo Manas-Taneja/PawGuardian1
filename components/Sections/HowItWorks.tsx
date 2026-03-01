@@ -7,8 +7,8 @@ const pillars = [
     icon: Layers,
     title: "Smart Subscription",
     desc: "Personalised plans with regular diagnostics, baseline tracking, and AI-assisted health insights.",
-    iconStyle: { backgroundColor: 'rgba(255,107,157,0.12)', color: '#FF6B9D' },
-    ghostColor: 'rgba(255,107,157,0.15)',
+    iconStyle: { backgroundColor: 'rgba(98,114,232,0.12)', color: '#6272E8' },
+    ghostColor: 'rgba(98,114,232,0.15)',
   },
   {
     icon: Truck,

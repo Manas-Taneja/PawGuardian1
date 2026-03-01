@@ -48,8 +48,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, navigate, onOpenBoo
               whileHover={{ rotate: [0, -15, 15, -10, 10, 0], transition: { duration: 0.5, ease: 'easeInOut' } }}
               className="text-white p-2 rounded-xl shadow-lg"
               style={{
-                background: 'linear-gradient(135deg, #FF6B9D, #FF9F7F)',
-                boxShadow: '0 6px 16px rgba(255,107,157,0.35)',
+                background: 'linear-gradient(135deg, #6272E8, #7B93F0)',
+                boxShadow: '0 6px 16px rgba(98,114,232,0.35)',
               }}
             >
               <PawPrint size={24} />
@@ -111,14 +111,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, navigate, onOpenBoo
               size="sm"
               className="hidden md:flex text-white border-none rounded-full px-5"
               style={{
-                backgroundColor: '#FF6B9D',
-                boxShadow: '0 4px 14px rgba(255,107,157,0.35)',
+                backgroundColor: '#6272E8',
+                boxShadow: '0 4px 14px rgba(98,114,232,0.35)',
               }}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#e85a8a';
+                (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#5060D8';
               }}
               onMouseLeave={(e) => {
-                (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#FF6B9D';
+                (e.currentTarget as HTMLButtonElement).style.backgroundColor = '#6272E8';
               }}
               onClick={onOpenBooking}
             >

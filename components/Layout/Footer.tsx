@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
         <div className="flex items-center gap-2">
           <div
             className="text-white p-1.5 rounded-lg"
-            style={{ background: 'linear-gradient(135deg, #FF6B9D, #FF9F7F)' }}
+            style={{ background: 'linear-gradient(135deg, #6272E8, #7B93F0)' }}
           >
             <PawPrint size={20} />
           </div>
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
           <a
             href="#"
             className="transition-colors"
-            onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#FF6B9D')}
+            onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#6272E8')}
             onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = '#a8a6b8')}
           >
             <Twitter size={20} />
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
           <a
             href="#"
             className="transition-colors"
-            onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#FF6B9D')}
+            onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#6272E8')}
             onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = '#a8a6b8')}
           >
             <Instagram size={20} />
@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
           <a
             href="#"
             className="transition-colors"
-            onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#FF6B9D')}
+            onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#6272E8')}
             onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = '#a8a6b8')}
           >
             <Linkedin size={20} />

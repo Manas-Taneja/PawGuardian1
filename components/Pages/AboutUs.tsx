@@ -387,7 +387,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ navigate, onOpenBooking }) => 
                         <Button
                             size="lg"
                             className="text-white border-none shadow-lg rounded-full px-8 flex items-center gap-2 group"
-                            style={{ backgroundColor: '#1e3470', boxShadow: '0 8px 24px rgba(30,52,112,0.40)' }}
+                            style={{ backgroundColor: '#6272E8', boxShadow: '0 8px 24px rgba(98,114,232,0.40)' }}
                             onClick={onOpenBooking}
                         >
                             <Users size={18} />
