@@ -1,7 +1,5 @@
 import React from 'react';
-import { Button } from '../ui/Button';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
 
 export const FinalCTA: React.FC = () => {
   return (
@@ -16,11 +14,11 @@ export const FinalCTA: React.FC = () => {
         <div className="flex items-center justify-center gap-3 mb-8">
           {['#FF6B9D', '#FF9F7F', '#FF6B9D', '#FF9F7F', '#FF6B9D'].map((color, i) => (
             <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill={color} xmlns="http://www.w3.org/2000/svg" style={{ opacity: 0.7 }}>
-              <ellipse cx="12" cy="15" rx="5" ry="6" />
-              <circle cx="7" cy="8" r="2.5" />
-              <circle cx="12" cy="6" r="2.5" />
-              <circle cx="17" cy="8" r="2.5" />
-              <circle cx="5" cy="13" r="2" />
+              <ellipse cx="12" cy="16" rx="5" ry="5.5" />
+              <circle cx="7" cy="9" r="2.5" />
+              <circle cx="11" cy="6" r="2.5" />
+              <circle cx="15" cy="7" r="2.5" />
+              <circle cx="18" cy="10" r="2" />
             </svg>
           ))}
         </div>
@@ -29,7 +27,7 @@ export const FinalCTA: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6"
         >
-          Your Pet Can’t Tell You When Something’s Wrong. <span><span style={{ color: ‘#1e3470’ }}>We Can</span><span style={{ color: ‘#FF6B9D’ }}>.</span></span>
+          Your Pet Can&apos;t Tell You When Something&apos;s Wrong. <span><span style={{ color: ‘#1e3470’ }}>We Can</span><span style={{ color: ‘#FF6B9D’ }}>.</span></span>
         </motion.h2>
 
         <motion.p
@@ -39,7 +37,7 @@ export const FinalCTA: React.FC = () => {
           className="text-xl text-gray-600 mb-12 leading-relaxed"
         >
           Stop waiting for symptoms. Stop stressing your pet with clinic visits. <br className="hidden md:block" />
-          Start caring before it’s urgent.
+          Start caring before it&apos;s urgent.
         </motion.p>
 
         <p className="mt-8 text-sm text-gray-500">Join PawGuardian today and be part of India’s preventive pet-care movement.</p>
