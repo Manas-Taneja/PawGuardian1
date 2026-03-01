@@ -43,13 +43,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center justify-center gap-2 mb-10"
+          className="flex items-center justify-center gap-2 mb-8"
         >
           <span
-            className="flex items-center gap-2 text-xs font-light tracking-[0.2em] uppercase px-5 py-2"
-            style={{ color: '#ffffff', borderBottom: '1px solid rgba(255,255,255,0.3)' }}
+            className="flex items-center gap-1.5 text-xs font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full"
+            style={{ backgroundColor: 'rgba(98,114,232,0.25)', color: '#c8d0ff', border: '1px solid rgba(98,114,232,0.4)' }}
           >
-            Accepting Early Access
+            <PawPrint size={12} /> Accepting Early Access
           </span>
         </motion.div>
 
@@ -58,10 +58,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-4xl md:text-6xl font-light tracking-[0.15em] uppercase mb-8 drop-shadow-xl"
+          className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 drop-shadow-xl"
         >
           Revolutionising <br />
-          <span className="font-semibold" style={{ color: '#fff' }}>
+          <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(to right, #6272E8, #7B93F0)' }}>
             Pet Care.
           </span>
         </motion.h1>
@@ -71,7 +71,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-base md:text-lg text-gray-300 max-w-xl mx-auto mb-12 leading-[2] font-light tracking-wide"
+          className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed font-medium"
         >
           India's first at-home, subscription-based preventive care ecosystem. Managed healthcare for your pet, for every stage of their life.
         </motion.p>
@@ -81,16 +81,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           {/* Join Waitlist Button */}
           <Button
             size="lg"
             onClick={onOpenBooking}
-            className="text-white bg-transparent border border-white hover:bg-white/10 px-8 py-6 rounded-none flex items-center gap-4 transition-all duration-300 uppercase tracking-[0.15em] text-xs font-medium group"
+            className="text-white border-none px-8 rounded-full flex items-center gap-2 group"
+            style={{ background: 'linear-gradient(135deg, #6272E8, #7B93F0)', boxShadow: '0 8px 24px rgba(98,114,232,0.40)' }}
           >
             <span>Join the Waitlist</span>
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </Button>
 
           {/* Stay Updated Button */}
@@ -102,7 +103,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
             <Button
               size="lg"
               variant="secondary"
-              className="text-white/70 bg-transparent hover:text-white px-8 py-6 rounded-none flex items-center transition-all duration-300 uppercase tracking-[0.15em] text-xs font-light"
+              className="bg-white/10 text-white hover:bg-white/20 border-transparent hover:border-white/30 rounded-full px-8"
             >
               Stay Updated
             </Button>
@@ -114,18 +115,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="mt-20 flex flex-wrap justify-center gap-10 text-[10px] sm:text-xs font-light tracking-[0.2em] uppercase"
+          className="mt-12 flex flex-wrap justify-center gap-3 text-sm font-semibold"
         >
           {([
-            { label: 'At-home Diagnostics' },
-            { label: 'Expert Vets' },
-            { label: 'No Hidden Costs' },
-          ] as { label: string }[]).map(({ label }) => (
+            { icon: <Stethoscope size={14} />, label: 'At-home Diagnostics' },
+            { icon: <UserRound size={14} />, label: 'Expert Vets' },
+            { icon: <Wallet size={14} />, label: 'No Hidden Costs' },
+          ] as { icon: React.ReactNode; label: string }[]).map(({ icon, label }) => (
             <span
               key={label}
-              className="text-white/60 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-white/90"
+              style={{ backgroundColor: 'rgba(255,255,255,0.18)', border: '1px solid rgba(255,255,255,0.25)' }}
             >
-              {label}
+              {icon} {label}
             </span>
           ))}
         </motion.div>
