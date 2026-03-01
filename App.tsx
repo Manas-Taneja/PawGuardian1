@@ -69,7 +69,7 @@ function App() {
         ) : currentPage === 'vets' ? (
           <Vets navigate={navigate} />
         ) : (
-          <Services />
+          <Services onOpenBooking={openBooking} />
         )}
 
         <Footer />

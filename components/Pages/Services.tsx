@@ -297,7 +297,15 @@ const FaqItem: React.FC<{ q: string; a: string; index: number }> = ({ q, a, inde
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-export const Services: React.FC = () => {
+interface ServicesProps {
+    onOpenBooking: () => void;
+}
+
+export const Services: React.FC<ServicesProps> = ({ onOpenBooking }) => {
+    const scrollToPlans = () => {
+        document.getElementById('services-plans')?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return (
         <main className="min-h-screen" style={{ backgroundColor: '#f8f4e8' }}>
 
@@ -385,6 +393,7 @@ export const Services: React.FC = () => {
                                 backgroundColor: '#1e3470',
                                 boxShadow: '0 8px 24px rgba(30,52,112,0.50)',
                             }}
+                            onClick={onOpenBooking}
                         >
                             <CalendarCheck size={18} />
                             <span>Book a Service</span>
@@ -397,6 +406,7 @@ export const Services: React.FC = () => {
                             size="lg"
                             variant="secondary"
                             className="bg-white/10 text-white hover:bg-white/20 border-white/20 hover:border-white/40 backdrop-blur-sm rounded-full px-8"
+                            onClick={scrollToPlans}
                         >
                             View Plans & Pricing
                         </Button>
@@ -441,7 +451,7 @@ export const Services: React.FC = () => {
             </nav>
 
             {/* ── Services Grid ──────────────────────────────────────────────── */}
-            <section className="py-24 px-6 bg-white" style={{ paddingTop: '5rem' }}>
+            <section id="services-plans" className="py-24 px-6 bg-white" style={{ paddingTop: '5rem' }}>
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <span
@@ -631,6 +641,7 @@ export const Services: React.FC = () => {
                                 backgroundColor: '#1e3470',
                                 boxShadow: '0 8px 24px rgba(30,52,112,0.40)',
                             }}
+                            onClick={onOpenBooking}
                         >
                             <CalendarCheck size={18} />
                             <span>Book a Home Visit</span>
@@ -643,6 +654,7 @@ export const Services: React.FC = () => {
                             size="lg"
                             variant="secondary"
                             className="bg-white/10 text-white hover:bg-white/20 border-white/20 hover:border-white/40 backdrop-blur-sm rounded-full px-8"
+                            onClick={scrollToPlans}
                         >
                             Explore Subscription Plans
                         </Button>
