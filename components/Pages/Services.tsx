@@ -6,8 +6,9 @@ import {
     Video,
     HeartPulse,
     ShieldCheck,
+    Dog,
+    Cat,
     Activity,
-    Brain,
     FlaskConical,
     Bug,
     Sparkles,
@@ -455,7 +456,7 @@ const ServicesContent: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                                 style={{ borderColor: 'rgba(0,63,125,0.1)' }}
                             >
                                 <h3 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                                    <ShieldCheck size={32} style={{ color: '#FF8E00' }} />
+                                    <Dog size={32} style={{ color: '#FF8E00' }} />
                                     For Dogs
                                 </h3>
                                 <div className="space-y-6">
@@ -501,7 +502,7 @@ const ServicesContent: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                                 style={{ borderColor: 'rgba(0,63,125,0.1)' }}
                             >
                                 <h3 className="text-3xl font-bold text-gray-900 mb-6 flex items-center gap-3">
-                                    <Brain size={32} style={{ color: '#FD7702' }} />
+                                    <Cat size={32} style={{ color: '#FD7702' }} />
                                     For Cats
                                 </h3>
                                 <div className="space-y-6">
