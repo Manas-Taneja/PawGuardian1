@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, navigate, onOpenBoo
         backgroundColor: isScrolled ? 'rgba(248,244,232,0.93)' : '#f8f4e8',
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-20 grid grid-cols-3 items-center">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between md:grid md:grid-cols-3">
         {/* Left: Logo */}
         <button
           onClick={() => navigate('home')}
