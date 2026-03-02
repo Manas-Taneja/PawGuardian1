@@ -7,21 +7,21 @@ const pillars = [
     icon: Layers,
     title: "Smart Subscription",
     desc: "Personalised plans with regular diagnostics, baseline tracking, and AI-assisted health insights.",
-    iconStyle: { backgroundColor: 'rgba(98,114,232,0.12)', color: '#6272E8' },
-    ghostColor: 'rgba(98,114,232,0.15)',
+    iconStyle: { backgroundColor: 'rgba(255,142,0,0.12)', color: '#FF8E00' },
+    ghostColor: 'rgba(255,142,0,0.15)',
   },
   {
     icon: Truck,
     title: "Doorstep Veterinary Care",
     desc: "At-home sample collection, vaccinations, and tele-consults based on real test results.",
-    iconStyle: { backgroundColor: 'rgba(78,205,196,0.12)', color: '#4ECDC4' },
+    iconStyle: { backgroundColor: 'rgba(0,51,102,0.12)', color: '#003366' },
     ghostColor: 'rgba(78,205,196,0.15)',
   },
   {
     icon: Smartphone,
     title: "Digital Health Platform",
     desc: "All records, reminders, reports, and vet guidance—accessible in one place.",
-    iconStyle: { backgroundColor: 'rgba(255,159,127,0.12)', color: '#FF9F7F' },
+    iconStyle: { backgroundColor: 'rgba(255,142,0,0.12)', color: '#FF8E00' },
     ghostColor: 'rgba(255,159,127,0.15)',
   },
   {
@@ -35,12 +35,12 @@ const pillars = [
 
 export const HowItWorks: React.FC = () => {
   return (
-    <section id="how-it-works" className="py-24 border-t" style={{ backgroundColor: '#f8f4e8', borderColor: 'rgba(30,52,112,0.10)' }}>
+    <section id="how-it-works" className="py-24 border-t" style={{ backgroundColor: '#f8f4e8', borderColor: 'rgba(0,35,71,0.10)' }}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
           <span
             className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-2"
-            style={{ backgroundColor: '#FFE66D', color: '#7a5c00' }}
+            style={{ backgroundColor: '#FD7702', color: '#7a5c00' }}
           >
             <Sparkles size={12} className="inline mr-1" /> The 4-Pillar Model
           </span>
@@ -59,7 +59,7 @@ export const HowItWorks: React.FC = () => {
               transition={{ delay: index * 0.1 }}
               whileHover={{ y: -5 }}
               className="relative bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all group overflow-hidden"
-              style={{ '--tw-shadow-color': 'rgba(30,52,112,0.08)' } as React.CSSProperties}
+              style={{ '--tw-shadow-color': 'rgba(0,35,71,0.08)' } as React.CSSProperties}
             >
               <div
                 className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"

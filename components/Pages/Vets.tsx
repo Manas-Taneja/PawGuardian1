@@ -208,17 +208,17 @@ export const Vets: React.FC<VetsProps> = () => {
       {/* ── Hero ─────────────────────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden py-32 px-6"
-        style={{ backgroundColor: '#282239' }}
+        style={{ backgroundColor: '#002347' }}
       >
         {/* Decorative blobs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div
             className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full blur-[130px]"
-            style={{ backgroundColor: 'rgba(30,52,112,0.30)' }}
+            style={{ backgroundColor: 'rgba(0,35,71,0.30)' }}
           />
           <div
             className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full blur-[100px]"
-            style={{ backgroundColor: 'rgba(168,180,216,0.10)' }}
+            style={{ backgroundColor: 'rgba(255,142,0,0.10)' }}
           />
         </div>
 
@@ -233,10 +233,10 @@ export const Vets: React.FC<VetsProps> = () => {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center justify-center gap-2 mb-6"
           >
-            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#a8b4d8' }} />
+            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#FF8E00' }} />
             <span
               className="text-xs font-bold tracking-[0.2em] uppercase"
-              style={{ color: '#a8b4d8' }}
+              style={{ color: '#FF8E00' }}
             >
               For Veterinarians
             </span>
@@ -251,7 +251,7 @@ export const Vets: React.FC<VetsProps> = () => {
             Partner With{' '}
             <span
               className="text-transparent bg-clip-text"
-              style={{ backgroundImage: 'linear-gradient(to right, #a8b8e8, #c8b4f0)' }}
+              style={{ backgroundImage: 'linear-gradient(to right, #FF8E00, #FD7702)' }}
             >
               PawGuardian
             </span>
@@ -267,30 +267,20 @@ export const Vets: React.FC<VetsProps> = () => {
             own schedule, and make a real difference in the lives of pets and their families.
           </motion.p>
 
-          {/* Stats strip */}
+          {/* Call to Action Button */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="mt-12 flex flex-col sm:flex-row gap-6 justify-center"
+            className="mt-12 flex justify-center"
           >
-            {[
-              { value: '500+', label: 'Partner Vets' },
-              { value: '10K+', label: 'Pet Owners' },
-              { value: 'Verified', label: 'Platform' },
-            ].map(({ value, label }) => (
-              <div
-                key={label}
-                className="flex flex-col items-center px-8 py-4 rounded-2xl"
-                style={{
-                  backgroundColor: 'rgba(255,255,255,0.07)',
-                  border: '1px solid rgba(168,180,216,0.15)',
-                }}
-              >
-                <span className="text-3xl font-extrabold text-white">{value}</span>
-                <span className="text-sm mt-1" style={{ color: '#a8b4d8' }}>{label}</span>
-              </div>
-            ))}
+            <a
+              href="#signup"
+              className="px-8 py-4 rounded-full font-bold text-white text-lg transition-transform hover:scale-105 shadow-xl cursor-pointer"
+              style={{ backgroundColor: '#FF8E00', boxShadow: '0 8px 24px rgba(255,142,0,0.3)' }}
+            >
+              Join Us
+            </a>
           </motion.div>
         </div>
       </section>
@@ -301,12 +291,12 @@ export const Vets: React.FC<VetsProps> = () => {
           <div className="text-center mb-16">
             <span
               className="font-semibold tracking-wide uppercase text-sm"
-              style={{ color: '#1e3470' }}
+              style={{ color: '#003F7D' }}
             >
               Why Join Us
             </span>
             <h2 className="mt-2 text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
-              Built for <span style={{ color: '#1e3470' }}>Vets First</span>
+              Built for <span style={{ color: '#003F7D' }}>Vets First</span>
             </h2>
             <p className="mt-4 text-gray-500 max-w-xl mx-auto leading-relaxed">
               We handle the logistics so you can focus on what matters — delivering outstanding
@@ -327,9 +317,9 @@ export const Vets: React.FC<VetsProps> = () => {
               >
                 <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center"
-                  style={{ backgroundColor: 'rgba(30,52,112,0.08)' }}
+                  style={{ backgroundColor: 'rgba(0,35,71,0.08)' }}
                 >
-                  <Icon size={26} strokeWidth={1.6} style={{ color: '#1e3470' }} />
+                  <Icon size={26} strokeWidth={1.6} style={{ color: '#003F7D' }} />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900">{title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
@@ -340,12 +330,12 @@ export const Vets: React.FC<VetsProps> = () => {
       </section>
 
       {/* ── How it Works ──────────────────────────────────────────────────────── */}
-      <section className="py-24 px-6" style={{ backgroundColor: '#1e3470' }}>
+      <section className="py-24 px-6" style={{ backgroundColor: '#002347' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <span
               className="font-semibold tracking-wide uppercase text-sm"
-              style={{ color: '#a8b4d8' }}
+              style={{ color: '#FF8E00' }}
             >
               The Process
             </span>
@@ -391,12 +381,12 @@ export const Vets: React.FC<VetsProps> = () => {
       </section>
 
       {/* ── Signup Form ───────────────────────────────────────────────────────── */}
-      <section className="py-24 px-6" style={{ backgroundColor: '#f8f4e8' }}>
+      <section id="signup" className="py-24 px-6" style={{ backgroundColor: '#f8f4e8' }}>
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-12">
             <span
               className="font-semibold tracking-wide uppercase text-sm"
-              style={{ color: '#1e3470' }}
+              style={{ color: '#003F7D' }}
             >
               Get Started
             </span>
@@ -419,9 +409,9 @@ export const Vets: React.FC<VetsProps> = () => {
               <div className="text-center py-10">
                 <div
                   className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
-                  style={{ backgroundColor: 'rgba(30,52,112,0.08)' }}
+                  style={{ backgroundColor: 'rgba(0,35,71,0.08)' }}
                 >
-                  <CheckCircle2 size={32} style={{ color: '#1e3470' }} />
+                  <CheckCircle2 size={32} style={{ color: '#003F7D' }} />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Application Received!</h3>
                 <p className="text-gray-500 leading-relaxed max-w-sm mx-auto">
@@ -482,7 +472,7 @@ export const Vets: React.FC<VetsProps> = () => {
                               value={value}
                               checked={formData.clinic_type === value}
                               onChange={handleChange}
-                              className="accent-[#1e3470]"
+                              className="accent-[#003F7D]"
                             />
                             {label}
                           </label>
@@ -508,7 +498,7 @@ export const Vets: React.FC<VetsProps> = () => {
                         name="home_visit_aware"
                         checked={formData.home_visit_aware}
                         onChange={handleChange}
-                        className="mt-0.5 accent-[#1e3470] w-4 h-4 flex-shrink-0"
+                        className="mt-0.5 accent-[#003F7D] w-4 h-4 flex-shrink-0"
                       />
                       <span className="text-sm text-gray-700">
                         <span className="font-semibold">I understand this is an at-home visit service.</span>{' '}
@@ -529,7 +519,7 @@ export const Vets: React.FC<VetsProps> = () => {
                     {/* Agreement summary */}
                     <div
                       className="rounded-2xl p-5 space-y-3"
-                      style={{ backgroundColor: 'rgba(30,52,112,0.05)', border: '1px solid rgba(30,52,112,0.12)' }}
+                      style={{ backgroundColor: 'rgba(0,35,71,0.05)', border: '1px solid rgba(0,35,71,0.12)' }}
                     >
                       <h3 className="text-sm font-bold text-gray-900">Liability Agreement</h3>
                       <p className="text-xs text-gray-500 leading-relaxed">
@@ -544,7 +534,7 @@ export const Vets: React.FC<VetsProps> = () => {
                           'Non-solicitation clause — You agree not to solicit PawGuardian clients outside the platform.',
                         ].map((clause) => (
                           <li key={clause} className="flex items-start gap-2 text-xs text-gray-600">
-                            <span className="mt-0.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: '#1e3470' }} />
+                            <span className="mt-0.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: '#003F7D' }} />
                             {clause}
                           </li>
                         ))}
@@ -556,7 +546,7 @@ export const Vets: React.FC<VetsProps> = () => {
                       href="/PawGuardian-Vet-Agreement.pdf"
                       download
                       className="flex items-center justify-center gap-2 w-full py-3 rounded-xl border font-semibold text-sm transition-colors hover:bg-gray-50"
-                      style={{ borderColor: '#1e3470', color: '#1e3470' }}
+                      style={{ borderColor: '#003F7D', color: '#003F7D' }}
                     >
                       Download Agreement PDF
                     </a>
@@ -587,7 +577,7 @@ export const Vets: React.FC<VetsProps> = () => {
                       type="button"
                       onClick={() => setStep((s) => s - 1)}
                       className="flex-1 py-3.5 rounded-full font-semibold text-sm border transition-all cursor-pointer"
-                      style={{ borderColor: '#1e3470', color: '#1e3470' }}
+                      style={{ borderColor: '#003F7D', color: '#003F7D' }}
                     >
                       Back
                     </button>
@@ -604,7 +594,7 @@ export const Vets: React.FC<VetsProps> = () => {
                         }
                       }}
                       className="flex-1 py-3.5 rounded-full font-semibold text-white text-sm transition-all cursor-pointer"
-                      style={{ backgroundColor: '#6272E8', boxShadow: '0 4px 14px rgba(98,114,232,0.30)' }}
+                      style={{ backgroundColor: '#FF8E00', boxShadow: '0 4px 14px rgba(255,142,0,0.30)' }}
                     >
                       Next
                     </button>
@@ -613,7 +603,7 @@ export const Vets: React.FC<VetsProps> = () => {
                       type="submit"
                       disabled={isSubmitting}
                       className="flex-1 py-3.5 rounded-full font-semibold text-white text-sm transition-all disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
-                      style={{ backgroundColor: '#6272E8', boxShadow: '0 4px 14px rgba(98,114,232,0.30)' }}
+                      style={{ backgroundColor: '#FF8E00', boxShadow: '0 4px 14px rgba(255,142,0,0.30)' }}
                     >
                       {isSubmitting ? 'Submitting…' : 'Submit Application'}
                     </button>
@@ -652,8 +642,8 @@ const Field: React.FC<FieldProps> = ({ label, name, type, value, onChange, place
       onChange={onChange}
       placeholder={placeholder}
       required={required}
-      className="rounded-xl border px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#1e3470]/30 transition-shadow"
-      style={{ borderColor: 'rgba(30,52,112,0.20)' }}
+      className="rounded-xl border px-4 py-3 text-sm text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#003F7D]/30 transition-shadow"
+      style={{ borderColor: 'rgba(0,35,71,0.20)' }}
     />
   </div>
 );
@@ -673,15 +663,15 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ steps, current }) => (
           <div
             className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold transition-all"
             style={{
-              backgroundColor: i <= current ? '#1e3470' : 'rgba(30,52,112,0.10)',
-              color: i <= current ? '#fff' : '#1e3470',
+              backgroundColor: i <= current ? '#003F7D' : 'rgba(0,35,71,0.10)',
+              color: i <= current ? '#fff' : '#003F7D',
             }}
           >
             {i < current ? <CheckCircle2 size={18} /> : i + 1}
           </div>
           <span
             className="text-[10px] font-semibold uppercase tracking-wide text-center"
-            style={{ color: i <= current ? '#1e3470' : '#9ca3af' }}
+            style={{ color: i <= current ? '#003F7D' : '#9ca3af' }}
           >
             {label}
           </span>
@@ -689,7 +679,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ steps, current }) => (
         {i < steps.length - 1 && (
           <div
             className="h-px flex-1 mx-1 mb-5 transition-all"
-            style={{ backgroundColor: i < current ? '#1e3470' : 'rgba(30,52,112,0.15)' }}
+            style={{ backgroundColor: i < current ? '#003F7D' : 'rgba(0,35,71,0.15)' }}
           />
         )}
       </React.Fragment>
@@ -716,11 +706,11 @@ const FileField: React.FC<FileFieldProps> = ({ label, name, accept, file, onChan
     </label>
     <label
       className="flex items-center gap-3 rounded-xl border px-4 py-3 cursor-pointer hover:bg-gray-50 transition-colors"
-      style={{ borderColor: file ? '#1e3470' : 'rgba(30,52,112,0.20)' }}
+      style={{ borderColor: file ? '#003F7D' : 'rgba(0,35,71,0.20)' }}
     >
       <span
         className="text-xs font-semibold px-3 py-1.5 rounded-lg text-white flex-shrink-0"
-        style={{ backgroundColor: '#1e3470' }}
+        style={{ backgroundColor: '#003F7D' }}
       >
         Choose file
       </span>
