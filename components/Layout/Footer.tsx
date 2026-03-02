@@ -5,13 +5,13 @@ export const Footer: React.FC = () => {
   return (
     <footer
       className="border-t py-12"
-      style={{ backgroundColor: '#f8f4e8', borderColor: 'rgba(30,52,112,0.12)' }}
+      style={{ backgroundColor: '#f8f4e8', borderColor: 'rgba(0,35,71,0.12)' }}
     >
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex items-center gap-2">
           <div
             className="text-white p-1.5 rounded-lg"
-            style={{ background: 'linear-gradient(135deg, #FF6B9D, #FF9F7F)' }}
+            style={{ background: 'linear-gradient(135deg, #FF8E00, #FF8E00)' }}
           >
             <PawPrint size={20} />
           </div>
@@ -51,7 +51,7 @@ export const Footer: React.FC = () => {
           <a
             href="#"
             className="transition-colors"
-            onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#FF6B9D')}
+            onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#FF8E00')}
             onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = '#a8a6b8')}
           >
             <Twitter size={20} />
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
           <a
             href="#"
             className="transition-colors"
-            onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#FF6B9D')}
+            onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#FF8E00')}
             onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = '#a8a6b8')}
           >
             <Instagram size={20} />
@@ -67,7 +67,7 @@ export const Footer: React.FC = () => {
           <a
             href="#"
             className="transition-colors"
-            onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#FF6B9D')}
+            onMouseEnter={(e) => ((e.target as HTMLAnchorElement).style.color = '#FF8E00')}
             onMouseLeave={(e) => ((e.target as HTMLAnchorElement).style.color = '#a8a6b8')}
           >
             <Linkedin size={20} />

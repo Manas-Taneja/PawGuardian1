@@ -3,13 +3,15 @@ import { Navbar } from './components/Layout/Navbar';
 import { Footer } from './components/Layout/Footer';
 import { Hero } from './components/Sections/Hero';
 import { ValueProp } from './components/Sections/ValueProp';
-import { HowItWorks } from './components/Sections/HowItWorks';
+
 import { Plans } from './components/Sections/Plans';
 import { FinalCTA } from './components/Sections/FinalCTA';
 import { AboutUs } from './components/Pages/AboutUs';
 import { Services } from './components/Pages/Services';
 import { Vets } from './components/Pages/Vets';
 import { BookingModal } from './components/ui/BookingModal';
+import { Empathy } from './components/Sections/Empathy';
+import { Timeline } from './components/Sections/Timeline';
 import { motion } from 'framer-motion';
 
 export type Page = 'home' | 'about' | 'services' | 'vets';
@@ -60,7 +62,9 @@ function App() {
           <main>
             <Hero onOpenBooking={openBooking} />
             <ValueProp />
-            <HowItWorks />
+            <Empathy />
+
+            <Timeline />
             <Plans navigate={navigate} />
             <FinalCTA onOpenBooking={openBooking} navigate={navigate} />
           </main>

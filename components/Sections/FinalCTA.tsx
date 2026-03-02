@@ -13,13 +13,13 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenBooking, navigate }) =
     <section className="py-32 relative overflow-hidden" style={{ backgroundColor: '#f8f4e8' }}>
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] rounded-full blur-[80px] pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse, rgba(255,107,157,0.12) 0%, rgba(255,159,127,0.08) 50%, transparent 80%)' }}
+        style={{ background: 'radial-gradient(ellipse, rgba(255,142,0,0.12) 0%, rgba(123,147,240,0.08) 50%, transparent 80%)' }}
       />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
         {/* Decorative paw divider */}
         <div className="flex items-center justify-center gap-3 mb-8">
-          {['#FF6B9D', '#FF9F7F', '#FF6B9D', '#FF9F7F', '#FF6B9D'].map((color, i) => (
+          {['#FF8E00', '#7B93F0', '#FF8E00', '#7B93F0', '#FF8E00'].map((color, i) => (
             <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill={color} xmlns="http://www.w3.org/2000/svg" style={{ opacity: 0.7 }}>
               <ellipse cx="12" cy="16" rx="5" ry="5.5" />
               <circle cx="7" cy="9" r="2.5" />
@@ -37,8 +37,8 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenBooking, navigate }) =
         >
           Your Pet Can&apos;t Tell You When Something&apos;s Wrong.{' '}
           <span>
-            <span style={{ color: '#1e3470' }}>We Can</span>
-            <span style={{ color: '#FF6B9D' }}>.</span>
+            <span style={{ color: '#003F7D' }}>We Can</span>
+            <span style={{ color: '#FF8E00' }}>.</span>
           </span>
         </motion.h2>
 
@@ -62,7 +62,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenBooking, navigate }) =
           <Button
             size="lg"
             className="text-white border-none shadow-lg"
-            style={{ backgroundColor: '#FF6B9D', boxShadow: '0 4px 14px rgba(255,107,157,0.35)' }}
+            style={{ backgroundColor: '#FF8E00', boxShadow: '0 4px 14px rgba(255,142,0,0.35)' }}
             onClick={onOpenBooking}
           >
             Join the Waitlist
