@@ -700,6 +700,23 @@ const ServicesContent: React.FC<ServicesProps> = ({ onOpenBooking }) => {
             {/* ── FAQ / Details ─────────────────────────────────────────────── */}
             <section className="py-12 md:py-24 px-6" style={{ backgroundColor: '#f8f4e8' }}>
                 <div className="max-w-3xl mx-auto">
+                    <div className="mb-16 text-center">
+                        <span className="font-semibold tracking-wide uppercase text-sm" style={{ color: '#003F7D' }}>
+                            Common Questions
+                        </span>
+                        <h2 className="mt-2 text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
+                            Answered Honestly
+                        </h2>
+                    </div>
+
+                    <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-12 mb-12">
+                        <div className="flex flex-col">
+                            {faqs.map((faq, i) => (
+                                <FaqItem key={i} q={faq.q} a={faq.a} index={i} />
+                            ))}
+                        </div>
+                    </div>
+
                     <div className="text-center bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-12">
                         <span
                             className="font-semibold tracking-wide uppercase text-sm"
