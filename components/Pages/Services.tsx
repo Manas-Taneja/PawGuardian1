@@ -79,7 +79,7 @@ const services = [
         label: 'Diagnostics',
         tagline: 'Lab Tests at Home',
         description:
-            'Our trained phlebotomists collect samples at your home. Full blood panels, organ function, infection markers — results delivered digitally within 24 hours.',
+            'Our trained phlebotomists collect samples at your home. Full blood panels, organ function, infection markers — results delivered digitally.',
         highlight: 'from-[#003366] to-[#003366]',
         accent: '#003366',
         accentLight: 'rgba(0,51,102,0.08)',
@@ -147,7 +147,7 @@ const services = [
         label: 'Vet Consultations',
         tagline: 'Expert Advice, Anytime',
         description:
-            'In-person home visits and video consultations with our network of 500+ licensed vets.',
+            'In-person home visits and video consultations with our network of licensed vets.',
         highlight: 'from-[#002347] to-[#002347]',
         accent: '#002347',
         accentLight: 'rgba(0,35,71,0.08)',
@@ -187,24 +187,6 @@ const processSteps = [
     },
 ];
 
-const faqs = [
-    {
-        q: 'Are your vets licensed by the Veterinary Council of India?',
-        a: 'Yes. Every vet on our platform holds a valid VCI registration. We verify credentials before onboarding and conduct periodic re-verifications.',
-    },
-    {
-        q: 'What cities are you currently operating in?',
-        a: 'launching in goa soon',
-    },
-    {
-        q: 'Can I book an urgent same-day consultation?',
-        a: 'Yes. Same-day home visits are available in Bengaluru and Mumbai. In other cities, we can arrange a video consultation within 2 hours.',
-    },
-    {
-        q: 'What if my pet is not comfortable with the vet?',
-        a: "We use Fear Free™ handling techniques. If your pet is very anxious, we can request a vet who specialises in stress-free handling — at no extra charge.",
-    },
-];
 
 // ─── Animation Variants ───────────────────────────────────────────────────────
 
@@ -307,45 +289,6 @@ const ServiceCard: React.FC<{ service: (typeof services)[0]; index: number }> = 
     );
 };
 
-const FaqItem: React.FC<{ q: string; a: string; index: number }> = ({ q, a, index }) => {
-    const [open, setOpen] = React.useState(false);
-    return (
-        <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            custom={index}
-            viewport={{ once: true }}
-            className="border-b last:border-none"
-            style={{ borderColor: 'rgba(0,35,71,0.10)' }}
-        >
-            <button
-                onClick={() => setOpen(!open)}
-                className="w-full flex items-center justify-between gap-4 py-5 text-left bg-transparent border-none cursor-pointer"
-            >
-                <span className="font-semibold text-gray-900 leading-snug">{q}</span>
-                <ChevronDown
-                    size={18}
-                    className={`shrink-0 text-gray-400 transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
-                />
-            </button>
-            <AnimatePresence initial={false}>
-                {open && (
-                    <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: 'easeInOut' }}
-                        className="overflow-hidden"
-                    >
-                        <p className="text-gray-500 text-sm leading-relaxed pb-5">{a}</p>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </motion.div>
-    );
-};
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 interface ServicesProps {
@@ -439,10 +382,10 @@ const ServicesContent: React.FC<ServicesProps> = ({ onOpenBooking }) => {
                     <div className="mb-16 md:mb-32">
                         <div className="text-center mb-16">
                             <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">
-                                Subscription Plans (Auto-Pilot)
+                                Subscription Plans
                             </h2>
                             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-                                The ultimate peace of mind. All one-time services below are included in these comprehensive life-stage plans.
+                                The ultimate peace of mind. Put your pet's healthcare on autopilot — you won't have to worry or plan anything after you get it. All one-time services below are included in these comprehensive life-stage plans.
                             </p>
                         </div>
 
@@ -700,22 +643,6 @@ const ServicesContent: React.FC<ServicesProps> = ({ onOpenBooking }) => {
             {/* ── FAQ / Details ─────────────────────────────────────────────── */}
             <section className="py-12 md:py-24 px-6" style={{ backgroundColor: '#f8f4e8' }}>
                 <div className="max-w-3xl mx-auto">
-                    <div className="mb-16 text-center">
-                        <span className="font-semibold tracking-wide uppercase text-sm" style={{ color: '#003F7D' }}>
-                            Common Questions
-                        </span>
-                        <h2 className="mt-2 text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
-                            Answered Honestly
-                        </h2>
-                    </div>
-
-                    <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-12 mb-12">
-                        <div className="flex flex-col">
-                            {faqs.map((faq, i) => (
-                                <FaqItem key={i} q={faq.q} a={faq.a} index={i} />
-                            ))}
-                        </div>
-                    </div>
 
                     <div className="text-center bg-white rounded-3xl border border-gray-100 shadow-sm p-6 md:p-12">
                         <span

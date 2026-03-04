@@ -38,7 +38,7 @@ const benefits = [
 const steps = [
   { number: '01', title: 'Apply', desc: 'Fill out the form below with your credentials and specialty.' },
   { number: '02', title: 'Get Verified', desc: 'We review your license and credentials within 2 business days.' },
-  { number: '03', title: 'Start Seeing Patients', desc: 'Go live on the platform and start accepting bookings immediately.' },
+  { number: '03', title: 'Start Seeing Patients', desc: 'Join PawGuardian and start seeing patients immediately.' },
 ];
 
 const STEPS = ['Personal Info', 'Credentials', 'Practice Details', 'Agreement'];
@@ -271,8 +271,7 @@ export const Vets: React.FC<VetsProps> = () => {
             transition={{ delay: 0.2, duration: 0.7 }}
             className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
           >
-            Join India's fastest-growing home-visit vet network. Expand your practice, set your
-            own schedule, and make a real difference in the lives of pets and their families.
+            Expand your practice, set your own schedule, and make a real difference in the lives of pets and their families.
           </motion.p>
 
           {/* Call to Action Button */}
