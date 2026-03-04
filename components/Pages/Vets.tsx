@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Users, CalendarCheck, ShieldCheck, PawPrint, CheckCircle2, Home, Building2, Video } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Users, CalendarCheck, ShieldCheck, PawPrint, CheckCircle2, Home, Building2, Video, ChevronDown } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import type { Page } from '../../App';
 
@@ -17,23 +17,121 @@ const fadeUp = {
   }),
 };
 
-const benefits = [
+const roles = [
   {
     icon: Home,
     title: '1. The Visiting Vet',
-    desc: 'Perfect for recent graduates or vets seeking premium, flexible hours. Start earning immediately without the massive real estate, equipment, or administrative overhead of opening a physical clinic. Guaranteed patient pipeline from our dedicated subscriber base.',
+    subtitle: 'Perfect for recent graduates or vets seeking premium, flexible hours without the overhead.',
+    features: [
+      'Zero-CapEx Practice: Start earning immediately without the massive real estate, equipment, or administrative overhead of opening a physical clinic.',
+      'Guaranteed Patient Pipeline: Stop waiting for unpredictable walk-ins. We provide a geographically optimised roster of appointments driven by our dedicated subscriber base.'
+    ]
   },
   {
     icon: Video,
     title: '2. The Consulting Vet',
-    desc: 'Perfect for clinic owners wanting to monetize downtime. Turn slow clinic hours or your time at home into a secondary revenue stream. Review our recent diagnostics (CBC, Renal, Liver, Urine) before the call to provide evidence-based medical reviews, all remotely.',
+    subtitle: 'Perfect for clinic owners wanting to monetize their downtime from anywhere.',
+    features: [
+      'Monetize the Gaps: Turn slow clinic hours or your time at home into a secondary, high-margin revenue stream.',
+      'Data-Backed Consultations: Say goodbye to "blind" video calls where you have to guess the diagnosis. Our Consulting Vets receive the pet\'s recent PawGuardian diagnostic baseline (CBC, Renal, Liver, Urine) before the call. You provide actual, evidence-based medical reviews, not just generic advice.',
+      'Zero Commute: Provide expert care and build long-term relationships with pet parents entirely remotely.'
+    ]
   },
   {
     icon: Building2,
     title: '3. The Partner Vet',
-    desc: 'Perfect for established clinics looking for tertiary care. We do the preventive heavy lifting. When our diagnostics catch early disease, we route the pet to your Certified Clinic for priority treatment. Pre-diagnosed patients save your front desk time.',
+    subtitle: 'Perfect for established clinics looking to acquire high-value surgical and tertiary care patients.',
+    features: [
+      'High-Intent Referrals: We do the preventive heavy lifting. When our diagnostics catch early-stage kidney disease, dental decay, or tumors, we route the pet directly to your "Certified Clinic" for priority treatment and surgery.',
+      'Pre-Diagnosed Patients: Patients arrive at your clinic with a complete digital health record and recent lab work already completed by us, saving your front desk time and streamlining your intake process.',
+      'The "Premium Trust" Badge: Stand out from highly funded corporate chains. Being a PawGuardian Certified partner acts as a quality benchmark, driving our loyal subscribers to your practice for all their secondary and tertiary needs.'
+    ]
   },
 ];
+
+// ─── Expandable Role Component ───────────────────────────────────────────────
+
+const ExpandableVetRole: React.FC<{
+  role: { icon: any; title: string; subtitle: string; features: string[] };
+  index: number;
+}> = ({ role, index }) => {
+  const [open, setOpen] = React.useState(false);
+  const Icon = role.icon;
+  return (
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      custom={index}
+      viewport={{ once: true }}
+      className="bg-white rounded-3xl border border-gray-100 shadow-sm p-8 flex flex-col hover:shadow-xl transition-all cursor-pointer h-fit"
+      onClick={() => setOpen(!open)}
+    >
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-col gap-4">
+          <div
+            className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
+            style={{ backgroundColor: 'rgba(0,35,71,0.08)' }}
+          >
+            <Icon size={26} strokeWidth={1.6} style={{ color: '#003F7D' }} />
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">{role.title}</h3>
+            <p className="text-gray-500 text-sm leading-relaxed">{role.subtitle}</p>
+          </div>
+        </div>
+        <div
+          className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 mt-2"
+          style={{ backgroundColor: 'rgba(0,63,125,0.05)', transform: open ? 'rotate(180deg)' : 'none' }}
+        >
+          <ChevronDown size={18} style={{ color: '#003F7D' }} />
+        </div>
+      </div>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="overflow-hidden"
+          >
+            <div className="pt-6 mt-4 border-t border-gray-100">
+              <ul className="space-y-4">
+                {role.features.map((feature, j) => {
+                  const splitIndex = feature.indexOf(':');
+                  let boldPart = feature;
+                  let regularPart = '';
+
+                  if (splitIndex !== -1) {
+                    boldPart = feature.slice(0, splitIndex + 1);
+                    regularPart = feature.slice(splitIndex + 1);
+                  }
+
+                  return (
+                    <li key={j} className="flex items-start gap-3 text-sm text-gray-600 leading-relaxed">
+                      <div className="w-1.5 h-1.5 rounded-full mt-2 shrink-0 bg-[#003F7D]" />
+                      <span>
+                        {splitIndex !== -1 ? (
+                          <>
+                            <strong className="text-gray-900 font-semibold">{boldPart}</strong>
+                            {regularPart}
+                          </>
+                        ) : (
+                          feature
+                        )}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};
 
 const steps = [
   { number: '01', title: 'Apply', desc: 'Fill out the form below with your credentials and specialty.' },
@@ -256,14 +354,13 @@ export const Vets: React.FC<VetsProps> = () => {
             transition={{ duration: 0.7 }}
             className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-6 leading-[1.05]"
           >
-            Practice Modern, <br />
+            Partner with{' '}
             <span
               className="text-transparent bg-clip-text"
               style={{ backgroundImage: 'linear-gradient(to right, #FF8E00, #FD7702)' }}
             >
-              Preventive
-            </span>{' '}
-            Veterinary Medicine
+              PawGuardian
+            </span>
           </motion.h1>
 
           <motion.p
@@ -273,7 +370,7 @@ export const Vets: React.FC<VetsProps> = () => {
             className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
           >
             The transition to clinic-based care is stressing out our patients and delaying critical diagnoses.
-            Transporting pets to a clinic increases canine cortisol levels by 37%, and over 68% of cats experience severe stress during physical visits.
+            Transporting pets to a clinic increases canine cortisol levels for 3 out of 10 dogs, and more than 6 out of 10 cats experience severe stress during physical visits.
             Relying solely on walk-ins means you are often treating cases only when they hit the expensive, late-stage crisis point.
           </motion.p>
 
@@ -308,31 +405,11 @@ export const Vets: React.FC<VetsProps> = () => {
             <h2 className="mt-2 text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
               Shifting the <span style={{ color: '#003F7D' }}>Paradigm</span>
             </h2>
-            <p className="mt-4 text-gray-600 max-w-2xl mx-auto leading-relaxed text-lg">
-              PawGuardian is an aggregator and triage platform that handles the preventive baseline—so you can focus on practicing high-quality medicine. Choose how you want to practice and scale your revenue with zero marketing spend.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {benefits.map(({ icon: Icon, title, desc }, i) => (
-              <motion.div
-                key={title}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                custom={i}
-                viewport={{ once: true }}
-                className="bg-white rounded-3xl border border-gray-100 shadow-sm p-8 flex flex-col gap-4 hover:shadow-xl transition-shadow"
-              >
-                <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center"
-                  style={{ backgroundColor: 'rgba(0,35,71,0.08)' }}
-                >
-                  <Icon size={26} strokeWidth={1.6} style={{ color: '#003F7D' }} />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900">{title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-              </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-start relative z-10">
+            {roles.map((role, i) => (
+              <ExpandableVetRole key={role.title} role={role} index={i} />
             ))}
           </div>
         </div>
