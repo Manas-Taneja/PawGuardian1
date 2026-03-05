@@ -194,7 +194,7 @@ const faqs = [
     },
     {
         q: 'What cities are you currently operating in?',
-        a: 'launching in goa soon',
+        a: 'launching in Goa soon',
     },
     {
         q: 'Can I book an urgent same-day consultation?',
