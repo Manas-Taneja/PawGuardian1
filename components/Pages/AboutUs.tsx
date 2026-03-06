@@ -71,14 +71,14 @@ export const AboutUs: React.FC<AboutUsProps> = ({ navigate, onOpenBooking }) => 
         <main className="min-h-screen" style={{ backgroundColor: '#f8f4e8' }}>
 
             {/* ── Hero ─────────────────────────────────────────────────────── */}
-            <section className="relative overflow-hidden py-16 md:py-32 px-6" style={{ backgroundColor: '#002347' }}>
+            <section className="relative overflow-hidden py-16 md:py-32 px-6" style={{ backgroundColor: '#f8f4e8' }}>
                 {/* Decorative blobs */}
                 <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                    <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full blur-[120px]" style={{ backgroundColor: 'rgba(0,35,71,0.28)' }} />
-                    <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full blur-[120px]" style={{ backgroundColor: 'rgba(0,35,71,0.40)' }} />
+                    <div className="absolute -top-32 -left-32 w-[500px] h-[500px] rounded-full blur-[120px]" style={{ backgroundColor: 'rgba(255,142,0,0.15)' }} />
+                    <div className="absolute -bottom-32 -right-32 w-[400px] h-[400px] rounded-full blur-[120px]" style={{ backgroundColor: 'rgba(253,119,2,0.10)' }} />
                 </div>
 
-                <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+                <div className="relative z-10 max-w-4xl mx-auto text-center">
                     <motion.div
                         initial={{ opacity: 0, y: -16 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -94,7 +94,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ navigate, onOpenBooking }) => 
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7 }}
-                        className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6"
+                        className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-gray-900"
                     >
                         Built by Pet Lovers,{' '}
                         <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(to right, #FF8E00, #FD7702)' }}>
@@ -106,7 +106,7 @@ export const AboutUs: React.FC<AboutUsProps> = ({ navigate, onOpenBooking }) => 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.7 }}
-                        className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
+                        className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed"
                     >
                         PawGuardian was born out of one vet appointment gone too late, one bill
                         that didn't need to exist, and a conviction that India's 30 million pet
@@ -219,21 +219,21 @@ export const AboutUs: React.FC<AboutUsProps> = ({ navigate, onOpenBooking }) => 
 
 
             {/* ── CTA ──────────────────────────────────────────────────────── */}
-            <section className="py-12 md:py-24 px-6" style={{ background: 'linear-gradient(135deg, #002347 0%, #003F7D 50%, #002347 100%)' }}>
+            <section className="py-12 md:py-24 px-6" style={{ backgroundColor: '#ffffff' }}>
                 <div className="max-w-2xl mx-auto text-center">
-                    <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 border" style={{ backgroundColor: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.20)' }}>
-                        <Stethoscope size={14} className="text-blue-300" />
-                        <span className="text-xs font-semibold tracking-wide uppercase" style={{ color: '#c8d4f0' }}>
+                    <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-8 border" style={{ backgroundColor: 'rgba(0,35,71,0.05)', borderColor: 'rgba(0,35,71,0.1)' }}>
+                        <Stethoscope size={14} style={{ color: '#003F7D' }} />
+                        <span className="text-xs font-semibold tracking-wide uppercase" style={{ color: '#003F7D' }}>
                             Join the movement
                         </span>
                     </div>
-                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
                         Give Your Pet the{' '}
                         <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(to right, #FF8E00, #FD7702)' }}>
                             Healthcare They Deserve
                         </span>
                     </h2>
-                    <p className="text-gray-400 text-lg mb-10">
+                    <p className="text-gray-600 text-lg mb-10">
                         Join thousands of pet parents building a healthier future for their
                         companions — one subscription at a time.
                     </p>
@@ -250,8 +250,8 @@ export const AboutUs: React.FC<AboutUsProps> = ({ navigate, onOpenBooking }) => 
                         </Button>
                         <Button
                             size="lg"
-                            variant="secondary"
-                            className="bg-white/10 text-white hover:bg-white/20 border-white/20 hover:border-white/40 backdrop-blur-sm rounded-full px-8"
+                            variant="outline"
+                            className="bg-white/10 text-gray-900 hover:bg-gray-50 border-gray-200 hover:border-gray-300 backdrop-blur-sm rounded-full px-8"
                             onClick={() => navigate('services')}
                         >
                             View Our Plans

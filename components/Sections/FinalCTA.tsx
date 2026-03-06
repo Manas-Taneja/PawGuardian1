@@ -46,11 +46,9 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenBooking, navigate }) =
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-xl text-gray-600 mb-10 leading-relaxed"
+          className="text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto"
         >
-          Stop waiting for symptoms. Stop stressing your pet with clinic visits.{' '}
-          <br className="hidden md:block" />
-          Start caring before it&apos;s urgent.
+          Stop waiting for symptoms. Start caring before it&apos;s urgent.
         </motion.p>
 
         <motion.div

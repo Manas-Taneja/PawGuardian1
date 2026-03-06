@@ -5,7 +5,7 @@ import { Card } from '../ui/Card';
 
 export const Empathy: React.FC = () => {
     return (
-        <section className="py-12 md:py-24 relative overflow-hidden" style={{ backgroundColor: '#002347' }}>
+        <section className="py-12 md:py-24 relative overflow-hidden" style={{ backgroundColor: '#f8f4e8' }}>
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
 
@@ -15,7 +15,7 @@ export const Empathy: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-6"
+                            className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6"
                         >
                             We Feel You.<br />
                             <span style={{ color: '#FF8E00' }}>And We Feel Them, Too.</span>
@@ -25,9 +25,9 @@ export const Empathy: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.1 }}
-                            className="text-lg text-gray-300 leading-relaxed mb-8"
+                            className="text-lg text-gray-600 leading-relaxed mb-8"
                         >
-                            Clinic anxiety isn't just "in your head." Did you know that more than <strong>40% of cats</strong> develop long-term carrier phobia after just 3 vet visits?
+                            Clinic anxiety isn't just "in your head." Did you know that more than <strong className="text-gray-900">40% of cats</strong> develop long-term carrier phobia after just 3 vet visits?
                             <br /><br />
                             We know the panic of trying to get a scared cat into a carrier or dragging an anxious dog through clinic doors. That's why we bring the care to your living room.
                         </motion.p>
@@ -38,8 +38,8 @@ export const Empathy: React.FC = () => {
                                     <Video size={24} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white text-lg">Instant Tele-Consults</h4>
-                                    <p className="text-gray-400 text-sm">Multiple vet opinions at your fingertips. No need to load up the car for a second opinion.</p>
+                                    <h4 className="font-bold text-gray-900 text-lg">Instant Tele-Consults</h4>
+                                    <p className="text-gray-600 text-sm">Multiple vet opinions at your fingertips. No need to load up the car for a second opinion.</p>
                                 </div>
                             </div>
                             <div className="flex items-start gap-4">
@@ -47,8 +47,8 @@ export const Empathy: React.FC = () => {
                                     <ShieldCheck size={24} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white text-lg">Breed-Specific Experts</h4>
-                                    <p className="text-gray-400 text-sm">Access specialized vets who understand the exact quirks and risks of your specific breed.</p>
+                                    <h4 className="font-bold text-gray-900 text-lg">Breed-Specific Experts</h4>
+                                    <p className="text-gray-600 text-sm">Access specialized vets who understand the exact quirks and risks of your specific breed.</p>
                                 </div>
                             </div>
                         </div>
@@ -61,17 +61,17 @@ export const Empathy: React.FC = () => {
                         viewport={{ once: true }}
                         className="relative"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-tr from-[#FF8E00] to-[#FD7702] rounded-3xl blur-[80px] opacity-20 -z-10" />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-[#FF8E00] to-[#FD7702] rounded-3xl blur-[80px] opacity-10 -z-10" />
 
-                        <Card className="bg-white/5 border-white/10 backdrop-blur-xl p-10 rounded-3xl text-center">
+                        <Card className="bg-white border p-10 rounded-3xl text-center shadow-xl" style={{ borderColor: 'rgba(0,35,71,0.08)' }}>
                             <HeartPulse size={48} style={{ color: '#FF8E00' }} className="mx-auto mb-6" />
                             <h3 className="text-4xl sm:text-6xl font-black mb-4" style={{ color: '#FF8E00' }}>40%</h3>
-                            <p className="text-xl font-medium text-gray-200 uppercase tracking-widest mb-2">Of Cats Develop</p>
-                            <p className="text-gray-400">Carrier phobia & lasting anxiety after just three standard clinic visits.</p>
+                            <p className="text-xl font-bold text-gray-900 uppercase tracking-widest mb-2">Of Cats Develop</p>
+                            <p className="text-gray-600">Carrier phobia & lasting anxiety after just three standard clinic visits.</p>
 
-                            <hr className="border-white/10 my-8" />
+                            <hr className="border-gray-200 my-8" />
 
-                            <p className="text-white font-semibold">Keep their safe space safe. Let the vet come to you.</p>
+                            <p className="text-gray-900 font-bold">Keep their safe space safe. Let the vet come to you.</p>
                         </Card>
                     </motion.div>
 

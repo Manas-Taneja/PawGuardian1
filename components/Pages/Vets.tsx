@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Users, CalendarCheck, ShieldCheck, PawPrint, CheckCircle2, Home, Building2, Video } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Users, CalendarCheck, ShieldCheck, PawPrint, CheckCircle2, Home, Building2, Video, ChevronDown } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import type { Page } from '../../App';
 
@@ -17,28 +17,126 @@ const fadeUp = {
   }),
 };
 
-const benefits = [
+const roles = [
   {
-    icon: Users,
-    title: 'Grow Your Clientele',
-    desc: 'Reach thousands of pet owners actively looking for trusted, licensed vets in their area.',
+    icon: Home,
+    title: '1. The Visiting Vet',
+    subtitle: 'Perfect for recent graduates or vets seeking premium, flexible hours without the overhead.',
+    features: [
+      'Zero-CapEx Practice: Start earning immediately without the massive real estate, equipment, or administrative overhead of opening a physical clinic.',
+      'Guaranteed Patient Pipeline: Stop waiting for unpredictable walk-ins. We provide a geographically optimised roster of appointments driven by our dedicated subscriber base.'
+    ]
   },
   {
-    icon: CalendarCheck,
-    title: 'Streamlined Scheduling',
-    desc: 'Manage all your appointments through our platform — no more back-and-forth phone calls.',
+    icon: Video,
+    title: '2. The Consulting Vet',
+    subtitle: 'Perfect for clinic owners wanting to monetize their downtime from anywhere.',
+    features: [
+      'Monetize the Gaps: Turn slow clinic hours or your time at home into a secondary, high-margin revenue stream.',
+      'Data-Backed Consultations: Say goodbye to "blind" video calls where you have to guess the diagnosis. Our Consulting Vets receive the pet\'s recent PawGuardian diagnostic baseline (CBC, Renal, Liver, Urine) before the call. You provide actual, evidence-based medical reviews, not just generic advice.',
+      'Zero Commute: Provide expert care and build long-term relationships with pet parents entirely remotely.'
+    ]
   },
   {
-    icon: ShieldCheck,
-    title: 'Verified & Trusted',
-    desc: 'Join a network of certified, reviewed professionals that pet owners rely on every day.',
+    icon: Building2,
+    title: '3. The Partner Vet',
+    subtitle: 'Perfect for established clinics looking to acquire high-value surgical and tertiary care patients.',
+    features: [
+      'High-Intent Referrals: We do the preventive heavy lifting. When our diagnostics catch early-stage kidney disease, dental decay, or tumors, we route the pet directly to your "Certified Clinic" for priority treatment and surgery.',
+      'Pre-Diagnosed Patients: Patients arrive at your clinic with a complete digital health record and recent lab work already completed by us, saving your front desk time and streamlining your intake process.',
+      'The "Premium Trust" Badge: Stand out from highly funded corporate chains. Being a PawGuardian Certified partner acts as a quality benchmark, driving our loyal subscribers to your practice for all their secondary and tertiary needs.'
+    ]
   },
 ];
+
+// ─── Expandable Role Component ───────────────────────────────────────────────
+
+const ExpandableVetRole: React.FC<{
+  role: { icon: any; title: string; subtitle: string; features: string[] };
+  index: number;
+}> = ({ role, index }) => {
+  const [open, setOpen] = React.useState(false);
+  const Icon = role.icon;
+  return (
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      custom={index}
+      viewport={{ once: true }}
+      className="bg-white rounded-3xl border border-gray-100 shadow-sm p-8 flex flex-col hover:shadow-xl transition-all cursor-pointer h-fit"
+      onClick={() => setOpen(!open)}
+    >
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-col gap-4">
+          <div
+            className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0"
+            style={{ backgroundColor: 'rgba(0,35,71,0.08)' }}
+          >
+            <Icon size={26} strokeWidth={1.6} style={{ color: '#003F7D' }} />
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-gray-900 mb-2">{role.title}</h3>
+            <p className="text-gray-500 text-sm leading-relaxed">{role.subtitle}</p>
+          </div>
+        </div>
+        <div
+          className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 mt-2"
+          style={{ backgroundColor: 'rgba(0,63,125,0.05)', transform: open ? 'rotate(180deg)' : 'none' }}
+        >
+          <ChevronDown size={18} style={{ color: '#003F7D' }} />
+        </div>
+      </div>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="overflow-hidden"
+          >
+            <div className="pt-6 mt-4 border-t border-gray-100">
+              <ul className="space-y-4">
+                {role.features.map((feature, j) => {
+                  const splitIndex = feature.indexOf(':');
+                  let boldPart = feature;
+                  let regularPart = '';
+
+                  if (splitIndex !== -1) {
+                    boldPart = feature.slice(0, splitIndex + 1);
+                    regularPart = feature.slice(splitIndex + 1);
+                  }
+
+                  return (
+                    <li key={j} className="flex items-start gap-3 text-sm text-gray-600 leading-relaxed">
+                      <div className="w-1.5 h-1.5 rounded-full mt-2 shrink-0 bg-[#003F7D]" />
+                      <span>
+                        {splitIndex !== -1 ? (
+                          <>
+                            <strong className="text-gray-900 font-semibold">{boldPart}</strong>
+                            {regularPart}
+                          </>
+                        ) : (
+                          feature
+                        )}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+};
 
 const steps = [
   { number: '01', title: 'Apply', desc: 'Fill out the form below with your credentials and specialty.' },
   { number: '02', title: 'Get Verified', desc: 'We review your license and credentials within 2 business days.' },
-  { number: '03', title: 'Start Seeing Patients', desc: 'Go live on the platform and start accepting bookings immediately.' },
+  { number: '03', title: 'Start Seeing Patients', desc: 'Join PawGuardian and start seeing patients immediately.' },
 ];
 
 const STEPS = ['Personal Info', 'Credentials', 'Practice Details', 'Agreement'];
@@ -216,27 +314,27 @@ export const Vets: React.FC<VetsProps> = () => {
 
       {/* ── Hero ─────────────────────────────────────────────────────────────── */}
       <section
-        className="relative overflow-hidden py-16 md:py-32 px-6"
-        style={{ backgroundColor: '#002347' }}
+        className="relative overflow-hidden py-16 md:pb-32 px-6"
+        style={{ backgroundColor: '#f8f4e8' }}
       >
         {/* Decorative blobs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div
             className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full blur-[130px]"
-            style={{ backgroundColor: 'rgba(0,35,71,0.30)' }}
+            style={{ backgroundColor: 'rgba(255,142,0,0.10)' }}
           />
           <div
             className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full blur-[100px]"
-            style={{ backgroundColor: 'rgba(255,142,0,0.10)' }}
+            style={{ backgroundColor: 'rgba(253,119,2,0.08)' }}
           />
         </div>
 
         {/* Paw watermark */}
-        <div className="absolute right-12 top-1/2 -translate-y-1/2 opacity-[0.04] pointer-events-none select-none hidden md:block">
-          <PawPrint size={320} strokeWidth={0.8} className="text-white" />
+        <div className="absolute right-12 top-1/2 -translate-y-1/2 opacity-[0.04] pointer-events-none select-none hidden md:block" style={{ color: '#002347' }}>
+          <PawPrint size={320} strokeWidth={0.8} />
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
@@ -252,28 +350,22 @@ export const Vets: React.FC<VetsProps> = () => {
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.05]"
+            transition={{ delay: 0.1 }}
+            className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 tracking-tight text-gray-900"
           >
-            Partner With{' '}
-            <span
-              className="text-transparent bg-clip-text"
-              style={{ backgroundImage: 'linear-gradient(to right, #FF8E00, #FD7702)' }}
-            >
-              PawGuardian
-            </span>
+            Partner with <span style={{ color: '#FF8E00' }}>PawGuardian</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7 }}
-            className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
+            transition={{ delay: 0.2 }}
+            className="text-xl md:text-2xl mb-12 leading-relaxed text-gray-600"
           >
-            Join India's fastest-growing home-visit vet network. Expand your practice, set your
-            own schedule, and make a real difference in the lives of pets and their families.
+            3 out of 10 dogs and more than 6 out of 10 cats experience severe stress during physical clinic visits.
+            Join our network to provide stress-free, modern preventive care on your terms.
           </motion.p>
 
           {/* Call to Action Button */}
@@ -302,53 +394,32 @@ export const Vets: React.FC<VetsProps> = () => {
               className="font-semibold tracking-wide uppercase text-sm"
               style={{ color: '#003F7D' }}
             >
-              Why Join Us
+              How We Work Together
             </span>
             <h2 className="mt-2 text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
-              Built for <span style={{ color: '#003F7D' }}>Vets First</span>
+              Shifting the <span style={{ color: '#003F7D' }}>Paradigm</span>
             </h2>
-            <p className="mt-4 text-gray-500 max-w-xl mx-auto leading-relaxed">
-              We handle the logistics so you can focus on what matters — delivering outstanding
-              care to every patient.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {benefits.map(({ icon: Icon, title, desc }, i) => (
-              <motion.div
-                key={title}
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                custom={i}
-                viewport={{ once: true }}
-                className="bg-white rounded-3xl border border-gray-100 shadow-sm p-8 flex flex-col gap-4 hover:shadow-xl transition-shadow"
-              >
-                <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center"
-                  style={{ backgroundColor: 'rgba(0,35,71,0.08)' }}
-                >
-                  <Icon size={26} strokeWidth={1.6} style={{ color: '#003F7D' }} />
-                </div>
-                <h3 className="text-lg font-bold text-gray-900">{title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-              </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-start relative z-10">
+            {roles.map((role, i) => (
+              <ExpandableVetRole key={role.title} role={role} index={i} />
             ))}
           </div>
         </div>
       </section>
 
       {/* ── How it Works ──────────────────────────────────────────────────────── */}
-      <section className="py-12 md:py-24 px-6" style={{ backgroundColor: '#002347' }}>
+      <section className="py-12 md:py-24 px-6" style={{ backgroundColor: '#ffffff' }}>
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <span
               className="font-semibold tracking-wide uppercase text-sm"
-              style={{ color: '#FF8E00' }}
+              style={{ color: '#003F7D' }}
             >
               The Process
             </span>
-            <h2 className="mt-2 text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-white">
+            <h2 className="mt-2 text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight text-gray-900">
               How It Works
             </h2>
           </div>
@@ -357,7 +428,7 @@ export const Vets: React.FC<VetsProps> = () => {
             {/* Connecting line — desktop only */}
             <div
               className="hidden sm:block absolute top-10 left-[16.67%] right-[16.67%] h-px"
-              style={{ backgroundColor: 'rgba(168,180,216,0.25)' }}
+              style={{ backgroundColor: 'rgba(0,35,71,0.1)' }}
             />
 
             {steps.map(({ number, title, desc }, i) => (
@@ -371,16 +442,16 @@ export const Vets: React.FC<VetsProps> = () => {
                 className="relative text-center"
               >
                 <div
-                  className="w-20 h-20 rounded-2xl mx-auto mb-6 flex items-center justify-center relative z-10"
+                  className="w-20 h-20 rounded-2xl mx-auto mb-6 flex items-center justify-center relative z-10 bg-white"
                   style={{
-                    backgroundColor: 'rgba(255,255,255,0.10)',
-                    border: '1px solid rgba(168,180,216,0.25)',
+                    border: '1px solid rgba(0,35,71,0.10)',
+                    boxShadow: '0 8px 24px rgba(0,35,71,0.05)',
                   }}
                 >
-                  <span className="text-2xl font-black text-white">{number}</span>
+                  <span className="text-2xl font-black text-[#FF8E00]">{number}</span>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
-                <p className="text-sm leading-relaxed max-w-xs mx-auto" style={{ color: '#a8b4d8' }}>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{title}</h3>
+                <p className="text-sm leading-relaxed max-w-xs mx-auto text-gray-600">
                   {desc}
                 </p>
               </motion.div>
@@ -400,10 +471,11 @@ export const Vets: React.FC<VetsProps> = () => {
               Get Started
             </span>
             <h2 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight text-gray-900">
-              Apply to Join
+              Ready to modernize your practice?
             </h2>
-            <p className="mt-3 text-gray-500 leading-relaxed">
-              Fill in your details below and we'll get back to you within 2 business days.
+            <p className="mt-3 text-gray-500 leading-relaxed max-w-lg mx-auto">
+              Register as a PawGuardian Vet Today. Select your preferred tier during onboarding.
+              You can choose any single role or a combination of all three.
             </p>
           </div>
 
