@@ -81,13 +81,13 @@ export const Timeline: React.FC = () => {
                     </div>
 
                     {/* Straight Path (Mobile) */}
-                    <div className="md:hidden absolute top-[40px] bottom-[40px] left-[32px] w-[2px] bg-orange-200/50 z-0" />
+                    <div className="md:hidden absolute top-[24px] bottom-[24px] left-[32px] w-[2px] bg-orange-200/50 z-0" />
 
                     <div className="space-y-16 md:space-y-0 relative z-10">
                         {roadmapSteps.map((step, index) => {
                             const isEven = index % 2 === 0;
                             return (
-                                <div key={index} className={`flex flex-col md:flex-row items-center md:min-h-[220px] ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                                <div key={index} className={`relative w-full flex flex-col md:flex-row items-center md:min-h-[220px] ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
 
                                     {/* Mobile Node */}
                                     <div className="md:hidden absolute left-[12px] top-[14px]">
@@ -100,7 +100,7 @@ export const Timeline: React.FC = () => {
                                     </div>
 
                                     {/* Desktop Content Left/Right */}
-                                    <div className={`w-full md:w-5/12 ml-14 md:ml-0 ${isEven ? 'md:pr-16 md:text-right' : 'md:pl-16 md:text-left'} flex flex-col justify-center`}>
+                                    <div className={`w-full md:w-5/12 pl-16 pr-4 md:px-0 ${isEven ? 'md:pr-16 md:text-right' : 'md:pl-16 md:text-left'} flex flex-col justify-center`}>
                                         <motion.div
                                             initial={{ opacity: 0, x: isEven ? -30 : 30 }}
                                             whileInView={{ opacity: 1, x: 0 }}
